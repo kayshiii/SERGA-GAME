@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager instance; // Singleton pattern for easy access
+    public static UIManager instance;
 
-    public GameObject interactPrompt; // "Press E to talk" UI
+    public GameObject interactPrompt; 
 
     private void Awake()
     {
