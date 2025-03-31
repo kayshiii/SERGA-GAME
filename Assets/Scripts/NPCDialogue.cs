@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class NPCDialogue : MonoBehaviour
 {
@@ -10,15 +11,35 @@ public class NPCDialogue : MonoBehaviour
     [TextArea(3, 5)] public string npcDialogue;
 
     private bool isPlayerInRange = false;
+    private Camera mainCamera;
 
+    void Start()
+    {
+        mainCamera = Camera.main;
+    }
     void Update()
     {
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            dialogueUI.SetActive(true);
-            dialogueText.text = npcDialogue;
+            UIManager.instance.ShowBubbles(true, npcDialogue);
             UIManager.instance.ShowInteractPrompt(false);
         }
+
+        if (dialogueUI.activeSelf)
+        {
+            PositionDialogueUI();
+        }
+    }
+    private void PositionDialogueUI()
+    {
+        Vector3 worldPosition = transform.position + new Vector3(0, 8f, 0); // Interactive bubble at 8f
+        Vector3 simpleBubblePosition = transform.position + new Vector3(0, 9f, 0); // Simple bubble at 9f
+
+        Vector3 screenPosition = mainCamera.WorldToScreenPoint(worldPosition);
+        Vector3 simpleScreenPosition = mainCamera.WorldToScreenPoint(simpleBubblePosition);
+
+        UIManager.instance.interactiveBubble.transform.position = screenPosition;
+        UIManager.instance.simpleBubble.transform.position = simpleScreenPosition;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,7 +57,7 @@ public class NPCDialogue : MonoBehaviour
         {
             isPlayerInRange = false;
             UIManager.instance.ShowInteractPrompt(false);
-            dialogueUI.SetActive(false);
+            UIManager.instance.ShowBubbles(false, "");
         }
     }
 }
