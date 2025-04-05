@@ -1224,6 +1224,9 @@ MonoBehaviour:
   - {fileID: 146583270}
   - {fileID: 716398119}
   - {fileID: 1891092598}
+  questionText: {fileID: 225948317}
+  feedbackPanel: {fileID: 367899057}
+  feedbackText: {fileID: 1769259210}
   simpleBubble: {fileID: 367899057}
   simpleBubbleText: {fileID: 1769259210}
 --- !u!4 &640517826
