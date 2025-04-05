@@ -25,12 +25,12 @@ public class NPCDialogue : MonoBehaviour
             UIManager.instance.ShowInteractPrompt(false);
         }
 
-        if (dialogueUI.activeSelf)
+        /*if (dialogueUI.activeSelf)
         {
-            PositionDialogueUI();
-        }
+            //PositionDialogueUI();
+        }*/
     }
-    private void PositionDialogueUI()
+/*    private void PositionDialogueUI()
     {
         Vector3 worldPosition = transform.position + new Vector3(0, 8f, 0); // Interactive bubble at 8f
         Vector3 simpleBubblePosition = transform.position + new Vector3(0, 9f, 0); // Simple bubble at 9f
@@ -40,7 +40,7 @@ public class NPCDialogue : MonoBehaviour
 
         UIManager.instance.interactiveBubble.transform.position = screenPosition;
         UIManager.instance.simpleBubble.transform.position = simpleScreenPosition;
-    }
+    }*/
 
     private void OnTriggerEnter(Collider other)
     {
