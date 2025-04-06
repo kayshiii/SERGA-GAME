@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d95e85e0efd77164990ec93d2a1d171b
+guid: cdd23b3083471b048be5a148f6e379fb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,127 +97,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ieserga sprite sheet (placeholder) (flipped)_0
+      name: DogCat-LickSpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 171
-        y: 713
-        width: 186
-        height: 411
+        x: 123
+        y: 1651
+        width: 252
+        height: 215
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ea2b90d97ba39b41a0bead5a369952d
-      internalID: 1085026680
+      spriteID: d71647f9c6848194ab30ec74f6ac48fd
+      internalID: -860366752
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ieserga sprite sheet (placeholder) (flipped)_2
+      name: DogCat-LickSpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 436
-        y: 714
-        width: 231
-        height: 403
+        x: 387
+        y: 1651
+        width: 251
+        height: 214
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8be4b94482895bb438d8ffb649e3446d
-      internalID: -1140460925
+      spriteID: aa13ecece12eaa74b923fead181862e1
+      internalID: -241718486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ieserga sprite sheet (placeholder) (flipped)_3
+      name: DogCat-LickSpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 725
-        y: 713
-        width: 217
-        height: 411
+        x: 662
+        y: 1651
+        width: 253
+        height: 219
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4faa4f1b372c1af4eaaf2a47a0f6de61
-      internalID: 2045546955
+      spriteID: 72de1b534c003f04da5836c407934dbc
+      internalID: 468125814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ieserga sprite sheet (placeholder) (flipped)_4
+      name: DogCat-LickSpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 1002
-        y: 698
-        width: 189
-        height: 430
+        x: 939
+        y: 1650
+        width: 247
+        height: 219
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a211576e604ffb48ab5a00b56cd13a7
-      internalID: -1575209747
+      spriteID: a5c96ccb953faf94392a12f62b747cc6
+      internalID: 1559964958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ieserga sprite sheet (placeholder) (flipped)_8
+      name: DogCat-LickSpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 238
-        y: 225
-        width: 351
-        height: 433
+        x: 1216
+        y: 1649
+        width: 237
+        height: 216
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b313fb4c043f0aa4cb93ea1c2dff2ee6
-      internalID: 942855057
+      spriteID: d426da13f929e214085c1e78abc16dc2
+      internalID: -76461476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ieserga sprite sheet (placeholder) (flipped)_10
+      name: DogCat-LickSpriteSheet_6
       rect:
         serializedVersion: 2
-        x: 1007
-        y: 234
-        width: 186
-        height: 415
+        x: 1478
+        y: 1654
+        width: 237
+        height: 215
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4b3614d8d595424680eb259db241313
-      internalID: -1389304076
+      spriteID: 44bcc360532676942b55ba3e7d88f7d3
+      internalID: -1979579612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DogCat-LickSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 1396
+        width: 250
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d6c327974d0a241ae5378aaf3014a1
+      internalID: -1688232875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DogCat-LickSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 1396
+        width: 250
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4c93d10c572d3540858abef24d8a764
+      internalID: 1823044671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DogCat-LickSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 1396
+        width: 250
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 803184b85753580488a35662c401882b
+      internalID: 749186929
       vertices: []
       indices: 
       edges: []
@@ -225,7 +288,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 471b24b75bcb7d3449ee46b603b15e69
+    spriteID: 2424d3447fd0355418b33304eac219ce
     internalID: 0
     vertices: []
     indices: 
@@ -233,19 +296,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ieserga sprite sheet (placeholder) (flipped)_0: 1085026680
-      ieserga sprite sheet (placeholder) (flipped)_1: -1857105865
-      ieserga sprite sheet (placeholder) (flipped)_10: -1389304076
-      ieserga sprite sheet (placeholder) (flipped)_11: -1336797685
-      ieserga sprite sheet (placeholder) (flipped)_12: 1649254348
-      ieserga sprite sheet (placeholder) (flipped)_2: -1140460925
-      ieserga sprite sheet (placeholder) (flipped)_3: 2045546955
-      ieserga sprite sheet (placeholder) (flipped)_4: -1575209747
-      ieserga sprite sheet (placeholder) (flipped)_5: -959643267
-      ieserga sprite sheet (placeholder) (flipped)_6: -1102362825
-      ieserga sprite sheet (placeholder) (flipped)_7: -746541741
-      ieserga sprite sheet (placeholder) (flipped)_8: 942855057
-      ieserga sprite sheet (placeholder) (flipped)_9: 928723403
+      DogCat-LickSpriteSheet_0: -860366752
+      DogCat-LickSpriteSheet_1: -241718486
+      DogCat-LickSpriteSheet_10: 1512838258
+      DogCat-LickSpriteSheet_11: 749186929
+      DogCat-LickSpriteSheet_12: -2059197143
+      DogCat-LickSpriteSheet_13: 3159413
+      DogCat-LickSpriteSheet_14: -348393238
+      DogCat-LickSpriteSheet_15: 1764126053
+      DogCat-LickSpriteSheet_2: 468125814
+      DogCat-LickSpriteSheet_3: 1559964958
+      DogCat-LickSpriteSheet_4: -76461476
+      DogCat-LickSpriteSheet_5: -641907329
+      DogCat-LickSpriteSheet_6: -1979579612
+      DogCat-LickSpriteSheet_7: -1688232875
+      DogCat-LickSpriteSheet_8: 1827934761
+      DogCat-LickSpriteSheet_9: 1823044671
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

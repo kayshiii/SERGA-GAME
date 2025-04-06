@@ -1,0 +1,397 @@
+fileFormatVersion: 2
+guid: fce3efc5d42b1954e88143597bbd6210
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Gardener-SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 1594
+        width: 507
+        height: 388
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4fefedb6ecdb184da34f4e40b47243d
+      internalID: -240861140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gardener-SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 1594
+        width: 507
+        height: 388
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eda2b3801da95c443b53a6b1f58fb84d
+      internalID: -33806617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gardener-SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 1587
+        width: 507
+        height: 388
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7460287ffe7f5ca4b913971257072c13
+      internalID: -1521069306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gardener-SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 1109
+        width: 507
+        height: 388
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d72d084fa5bfe064db1284af2db7d0c6
+      internalID: -1181246720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gardener-SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 1109
+        width: 507
+        height: 388
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3818127e1a6a624b9baf1d5644ab6eb
+      internalID: -1477779715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gardener-SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 1105
+        width: 507
+        height: 388
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 865f0753e39070642b16a9477d05cd28
+      internalID: 1501169931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gardener-SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 652
+        width: 566
+        height: 372
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4ceb668bfa79db45b638f62799bebb1
+      internalID: 82771780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gardener-SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 628
+        width: 571
+        height: 376
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd263de60f9d7ce48aee1c9efd29aa0a
+      internalID: -803616346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gardener-SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 630
+        width: 568
+        height: 372
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 183bbeedd3bd2cd4db6c999350be7bad
+      internalID: 369753836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gardener-SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 159
+        width: 533
+        height: 341
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d655938736816fa4aa77f59a7b2f9b64
+      internalID: 1282898335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gardener-SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 154
+        width: 533
+        height: 337
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a070229b9e3b78e438c375692a9ca67d
+      internalID: 1807584478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gardener-SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 154
+        width: 533
+        height: 337
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 924465904b37e344e81f74851b028f01
+      internalID: -637454730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 749b9af10806faf498b64eb1a98e4461
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Gardener-SpriteSheet_0: -54314446
+      Gardener-SpriteSheet_1: 796153058
+      Gardener-SpriteSheet_10: 710789604
+      Gardener-SpriteSheet_11: 1501169931
+      Gardener-SpriteSheet_12: 82771780
+      Gardener-SpriteSheet_13: 1473371006
+      Gardener-SpriteSheet_14: -803616346
+      Gardener-SpriteSheet_15: 369753836
+      Gardener-SpriteSheet_16: -1914838463
+      Gardener-SpriteSheet_17: 2033027676
+      Gardener-SpriteSheet_18: -104912543
+      Gardener-SpriteSheet_19: 1833753150
+      Gardener-SpriteSheet_2: -240861140
+      Gardener-SpriteSheet_20: 1282898335
+      Gardener-SpriteSheet_21: 1807584478
+      Gardener-SpriteSheet_22: 1010068801
+      Gardener-SpriteSheet_23: -637454730
+      Gardener-SpriteSheet_24: -1700481519
+      Gardener-SpriteSheet_25: 219407305
+      Gardener-SpriteSheet_26: 858256348
+      Gardener-SpriteSheet_27: 292875209
+      Gardener-SpriteSheet_28: 719064703
+      Gardener-SpriteSheet_29: -29125107
+      Gardener-SpriteSheet_3: 982173094
+      Gardener-SpriteSheet_30: -680226481
+      Gardener-SpriteSheet_4: -33806617
+      Gardener-SpriteSheet_5: -1521069306
+      Gardener-SpriteSheet_6: -1927555725
+      Gardener-SpriteSheet_7: -1181246720
+      Gardener-SpriteSheet_8: 1039810725
+      Gardener-SpriteSheet_9: -1477779715
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

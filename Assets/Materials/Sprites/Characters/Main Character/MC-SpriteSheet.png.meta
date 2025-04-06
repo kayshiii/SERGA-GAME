@@ -1,0 +1,516 @@
+fileFormatVersion: 2
+guid: 5bddf56486e059c4f9dea25cf82acd48
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MC-SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 1517
+        width: 259
+        height: 444
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da00768d87587447bdcd6b8f4405947
+      internalID: -1601333425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC-SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 1517
+        width: 263
+        height: 433
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34b9f99c63200f447a1f6da5262aee6d
+      internalID: 1762686736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC-SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 1517
+        width: 362
+        height: 414
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3062a4a6e1e901e4e84e7de03b9bf3da
+      internalID: 69513820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC-SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 1517
+        width: 246
+        height: 445
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8af50ce45e0936b4a82bc5321d451396
+      internalID: -308601354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC-SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 1517
+        width: 294
+        height: 433
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 738c94a947e4aaa46b09bb286eef1509
+      internalID: 1421029671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC-SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 1514
+        width: 378
+        height: 417
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cba94f7502c86546bfed418c986c3d5
+      internalID: 921390959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC-SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1041
+        width: 263
+        height: 444
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b8f15677b60611499f58f53b56952bf
+      internalID: 41751344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC-SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1052
+        width: 264
+        height: 433
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b21daecfab90f14782ba7d7f417f978
+      internalID: -1319162029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC-SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 1071
+        width: 355
+        height: 414
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d3d066e32efc1d4e82e21b2f980af47
+      internalID: -1222596707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC-SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 1040
+        width: 246
+        height: 445
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a5eb8b4914d3274abfc67bd4b2b3496
+      internalID: 1205453385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC-SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 1052
+        width: 292
+        height: 433
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a9f9b84ead762440b1ae2e6b1ee12b4
+      internalID: 42193338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC-SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 1068
+        width: 377
+        height: 417
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f99776aa90e29704e824740915752445
+      internalID: -1602416387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC-SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 585
+        width: 160
+        height: 441
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e6cb887401551848a422a5fc515b6e5
+      internalID: -518880147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC-SpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 585
+        width: 160
+        height: 441
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04f88302d2d423e49837f82037e44085
+      internalID: 1673165811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC-SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 577
+        width: 159
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d2b5ac546a628946bf0abc77bbec8f0
+      internalID: -1877755924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC-SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 109
+        width: 160
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f67cb5bf501808c479cf55e3dcf70c49
+      internalID: -795762584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC-SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 109
+        width: 160
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3159f70aebdc16b498b4ce50b654f368
+      internalID: 602835815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MC-SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 109
+        width: 159
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2730c59474d13a44b42b4bac3fccdc0
+      internalID: 1581313199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 984f3d2dba8f7a7409e2382e6e1b30a4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      MC-SpriteSheet_0: -1601333425
+      MC-SpriteSheet_1: 1762686736
+      MC-SpriteSheet_10: 42193338
+      MC-SpriteSheet_11: -1602416387
+      MC-SpriteSheet_12: -518880147
+      MC-SpriteSheet_13: 2140770582
+      MC-SpriteSheet_14: 1673165811
+      MC-SpriteSheet_15: 93359989
+      MC-SpriteSheet_16: -1877755924
+      MC-SpriteSheet_17: -905119638
+      MC-SpriteSheet_18: -1886838342
+      MC-SpriteSheet_19: -795762584
+      MC-SpriteSheet_2: 69513820
+      MC-SpriteSheet_20: -1121240598
+      MC-SpriteSheet_21: 602835815
+      MC-SpriteSheet_22: -679497221
+      MC-SpriteSheet_23: 1581313199
+      MC-SpriteSheet_3: -308601354
+      MC-SpriteSheet_4: 1421029671
+      MC-SpriteSheet_5: 921390959
+      MC-SpriteSheet_6: 41751344
+      MC-SpriteSheet_7: -1319162029
+      MC-SpriteSheet_8: -1222596707
+      MC-SpriteSheet_9: 1205453385
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
