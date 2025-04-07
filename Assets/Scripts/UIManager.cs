@@ -28,8 +28,8 @@ public class UIManager : MonoBehaviour
 
     private List<string> dialogues = new List<string>
     {
-        "Hi there! I’m your guide today.",
-        "Let’s talk about suffixes.",
+        "Hi there! I'm your guide today.",
+        "Let's talk about suffixes.",
         "A suffix is a group of letters placed at the end of a word to change its meaning.",
         "For example, adding '-ness' to 'happy' makes 'happiness'.",
         "Ready to test your knowledge?"
@@ -45,7 +45,8 @@ public class UIManager : MonoBehaviour
         public int correctAnswerIndex;
     }
 
-    private QuestionData suffixQuestion;
+    private List<QuestionData> quizQuestions;
+    private int currentQuestionIndex = 0;
 
     private void Awake()
     {
@@ -64,12 +65,27 @@ public class UIManager : MonoBehaviour
         optionsPanel.SetActive(false);
         feedbackPanel.SetActive(false);
 
-        // Define quiz content
-        suffixQuestion = new QuestionData
+        // Initialize quiz questions
+        quizQuestions = new List<QuestionData>
         {
-            question = "Which of the following is a proper suffix?",
-            options = new string[] { "-ness", "pre-", "under" },
-            correctAnswerIndex = 0
+            new QuestionData
+            {
+                question = "Which of the following is a proper suffix?",
+                options = new string[] { "-ness", "pre-", "under" },
+                correctAnswerIndex = 0
+            },
+            new QuestionData
+            {
+                question = "What does the suffix '-ful' mean?",
+                options = new string[] { "Full of", "Without", "Before" },
+                correctAnswerIndex = 0
+            },
+            new QuestionData
+            {
+                question = "Which word uses the suffix '-ly' correctly?",
+                options = new string[] { "Quickly", "Unly", "Prely" },
+                correctAnswerIndex = 0
+            }
         };
     }
 
@@ -128,35 +144,46 @@ public class UIManager : MonoBehaviour
 
     private void ShowQuiz()
     {
-        optionsPanel.SetActive(true);
-        questionText.text = suffixQuestion.question;
-
-        for (int i = 0; i < optionButtons.Length; i++)
+        if (currentQuestionIndex < quizQuestions.Count)
         {
-            optionButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = suffixQuestion.options[i];
-            optionButtons[i].onClick.RemoveAllListeners();
+            optionsPanel.SetActive(true);
+            questionText.text = quizQuestions[currentQuestionIndex].question;
 
-            int index = i;
-            optionButtons[i].onClick.AddListener(() => OnQuizAnswerSelected(index));
+            for (int i = 0; i < optionButtons.Length; i++)
+            {
+                optionButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = quizQuestions[currentQuestionIndex].options[i];
+                optionButtons[i].onClick.RemoveAllListeners();
+
+                int index = i;
+                optionButtons[i].onClick.AddListener(() => OnQuizAnswerSelected(index));
+            }
+        }
+        else
+        {
+            // Quiz completed
+            optionsPanel.SetActive(false);
+            feedbackPanel.SetActive(true);
+            feedbackText.text = "Congratulations! You've completed all questions! 🎉";
+            currentQuestionIndex = 0; // Reset for next time
         }
     }
 
     private void OnQuizAnswerSelected(int index)
     {
-        bool isCorrect = index == suffixQuestion.correctAnswerIndex;
+        bool isCorrect = index == quizQuestions[currentQuestionIndex].correctAnswerIndex;
 
         optionsPanel.SetActive(false);
         feedbackPanel.SetActive(true);
         feedbackText.text = isCorrect ? "Correct! 🎉" : "Wrong answer. Try again.";
 
-        if (!isCorrect)
+        if (isCorrect)
         {
-            Invoke(nameof(ResetQuiz), 2f);
+            currentQuestionIndex++;
+            Invoke(nameof(ShowQuiz), 2f);
         }
         else
         {
-            Debug.Log("Quiz completed successfully!");
-            // Optionally: unlock next step or trigger event here
+            Invoke(nameof(ResetQuiz), 2f);
         }
     }
 
