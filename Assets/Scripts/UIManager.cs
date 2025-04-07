@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI questionText;
     public GameObject feedbackPanel;
     public TextMeshProUGUI feedbackText;
+    public Button confirmButton; // Add this in Inspector
 
     [Header("Simple Thought Bubble")]
     public GameObject simpleBubble;
@@ -47,6 +48,7 @@ public class UIManager : MonoBehaviour
 
     private List<QuestionData> quizQuestions;
     private int currentQuestionIndex = 0;
+    private int selectedOptionIndex = -1;
 
     private void Awake()
     {
@@ -58,12 +60,14 @@ public class UIManager : MonoBehaviour
     {
         leftArrow.onClick.AddListener(PreviousDialogue);
         rightArrow.onClick.AddListener(NextDialogue);
+        confirmButton.onClick.AddListener(ConfirmAnswer);
 
         UpdateDialogue();
         interactiveBubble.SetActive(false);
         simpleBubble.SetActive(false);
         optionsPanel.SetActive(false);
         feedbackPanel.SetActive(false);
+        confirmButton.gameObject.SetActive(false);
 
         // Initialize quiz questions
         quizQuestions = new List<QuestionData>
@@ -147,7 +151,9 @@ public class UIManager : MonoBehaviour
         if (currentQuestionIndex < quizQuestions.Count)
         {
             optionsPanel.SetActive(true);
+            confirmButton.gameObject.SetActive(false);
             questionText.text = quizQuestions[currentQuestionIndex].question;
+            selectedOptionIndex = -1;
 
             for (int i = 0; i < optionButtons.Length; i++)
             {
@@ -155,17 +161,30 @@ public class UIManager : MonoBehaviour
                 optionButtons[i].onClick.RemoveAllListeners();
 
                 int index = i;
-                optionButtons[i].onClick.AddListener(() => OnQuizAnswerSelected(index));
+                optionButtons[i].onClick.AddListener(() => OnOptionSelected(index));
             }
         }
         else
         {
             // Quiz completed
             optionsPanel.SetActive(false);
+            confirmButton.gameObject.SetActive(false);
             feedbackPanel.SetActive(true);
             feedbackText.text = "Congratulations! You've completed all questions! 🎉";
             currentQuestionIndex = 0; // Reset for next time
         }
+    }
+
+    private void OnOptionSelected(int index)
+    {
+        selectedOptionIndex = index;
+        confirmButton.gameObject.SetActive(true);
+    }
+
+    private void ConfirmAnswer()
+    {
+        confirmButton.gameObject.SetActive(false);
+        OnQuizAnswerSelected(selectedOptionIndex);
     }
 
     private void OnQuizAnswerSelected(int index)
