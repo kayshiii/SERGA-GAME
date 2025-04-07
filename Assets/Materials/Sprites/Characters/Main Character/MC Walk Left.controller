@@ -36,7 +36,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MC Walk Left
-  m_Speed: 0.1
+  m_Speed: 0.15
   m_CycleOffset: 1
   m_Transitions:
   - {fileID: 1929957848725401343}
@@ -272,7 +272,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MC Walk Right
-  m_Speed: 0.1
+  m_Speed: 0.15
   m_CycleOffset: 1
   m_Transitions:
   - {fileID: 4359393564559941329}
