@@ -74,21 +74,21 @@ public class UIManager : MonoBehaviour
         {
             new QuestionData
             {
-                question = "Which of the following is a proper suffix?",
-                options = new string[] { "-ness", "pre-", "under" },
+                question = "Ngayon lang tayo nagkakilala tapos [alis] mo na ako sa buhay mo? Wahhh...",
+                options = new string[] { "aalisin", "Alisin", "Umalis" },
                 correctAnswerIndex = 0
             },
             new QuestionData
             {
-                question = "What does the suffix '-ful' mean?",
-                options = new string[] { "Full of", "Without", "Before" },
-                correctAnswerIndex = 0
+                question = "[alis] muna natin 'to sa isip natin... May bukas pa naman!",
+                options = new string[] { "aalisin", "Alisin", "Umalis" },
+                correctAnswerIndex = 1
             },
             new QuestionData
             {
-                question = "Which word uses the suffix '-ly' correctly?",
-                options = new string[] { "Quickly", "Unly", "Prely" },
-                correctAnswerIndex = 0
+                question = "Tara! [alis] na tayo ngayon!",
+                options = new string[] { "aalisin", "Alisin", "Umalis" },
+                correctAnswerIndex = 2
             }
         };
     }
@@ -179,6 +179,11 @@ public class UIManager : MonoBehaviour
     {
         selectedOptionIndex = index;
         confirmButton.gameObject.SetActive(true);
+        
+        // Update question text to show selected option
+        string originalQuestion = quizQuestions[currentQuestionIndex].question;
+        string selectedOption = quizQuestions[currentQuestionIndex].options[index];
+        questionText.text = originalQuestion.Replace("[alis]", selectedOption);
     }
 
     private void ConfirmAnswer()
