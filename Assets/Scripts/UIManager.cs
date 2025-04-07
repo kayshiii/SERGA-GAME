@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI questionText;
     public GameObject feedbackPanel;
     public TextMeshProUGUI feedbackText;
+    public Button confirmButton; // Add this in Inspector
 
     [Header("Simple Thought Bubble")]
     public GameObject simpleBubble;
@@ -28,14 +29,16 @@ public class UIManager : MonoBehaviour
 
     private List<string> dialogues = new List<string>
     {
-        "Hi there! I’m your guide today.",
-        "Let’s talk about suffixes.",
+        "Hi there! I'm your guide today.",
+        "Let's talk about suffixes.",
         "A suffix is a group of letters placed at the end of a word to change its meaning.",
         "For example, adding '-ness' to 'happy' makes 'happiness'.",
         "Ready to test your knowledge?"
     };
 
     private int currentIndex = 0;
+    private int currentQuestionIndex = 0;
+    private int selectedAnswerIndex = -1;
 
     [System.Serializable]
     public class QuestionData
@@ -45,7 +48,7 @@ public class UIManager : MonoBehaviour
         public int correctAnswerIndex;
     }
 
-    private QuestionData suffixQuestion;
+    private List<QuestionData> questions = new List<QuestionData>();
 
     private void Awake()
     {
@@ -57,20 +60,36 @@ public class UIManager : MonoBehaviour
     {
         leftArrow.onClick.AddListener(PreviousDialogue);
         rightArrow.onClick.AddListener(NextDialogue);
+        confirmButton.onClick.AddListener(ConfirmAnswer);
 
         UpdateDialogue();
         interactiveBubble.SetActive(false);
         simpleBubble.SetActive(false);
         optionsPanel.SetActive(false);
         feedbackPanel.SetActive(false);
+        confirmButton.gameObject.SetActive(false);
 
-        // Define quiz content
-        suffixQuestion = new QuestionData
+        // Define quiz questions
+        questions.Add(new QuestionData
         {
             question = "Which of the following is a proper suffix?",
             options = new string[] { "-ness", "pre-", "under" },
             correctAnswerIndex = 0
-        };
+        });
+
+        questions.Add(new QuestionData
+        {
+            question = "What suffix can be added to 'happy' to make it mean 'the state of being happy'?",
+            options = new string[] { "-ly", "-ness", "-ful" },
+            correctAnswerIndex = 1
+        });
+
+        questions.Add(new QuestionData
+        {
+            question = "Which suffix can be added to 'quick' to make it mean 'in a quick manner'?",
+            options = new string[] { "-ness", "-ly", "-ful" },
+            correctAnswerIndex = 1
+        });
     }
 
     public void ShowInteractPrompt(bool state)
@@ -128,35 +147,60 @@ public class UIManager : MonoBehaviour
 
     private void ShowQuiz()
     {
-        optionsPanel.SetActive(true);
-        questionText.text = suffixQuestion.question;
-
-        for (int i = 0; i < optionButtons.Length; i++)
+        if (currentQuestionIndex < questions.Count)
         {
-            optionButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = suffixQuestion.options[i];
-            optionButtons[i].onClick.RemoveAllListeners();
+            optionsPanel.SetActive(true);
+            confirmButton.gameObject.SetActive(false);
+            questionText.text = questions[currentQuestionIndex].question;
+            selectedAnswerIndex = -1;
 
-            int index = i;
-            optionButtons[i].onClick.AddListener(() => OnQuizAnswerSelected(index));
+            for (int i = 0; i < optionButtons.Length; i++)
+            {
+                optionButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = questions[currentQuestionIndex].options[i];
+                optionButtons[i].onClick.RemoveAllListeners();
+
+                int index = i;
+                optionButtons[i].onClick.AddListener(() => SelectAnswer(index));
+            }
         }
+        else
+        {
+            // Quiz completed
+            optionsPanel.SetActive(false);
+            confirmButton.gameObject.SetActive(false);
+            feedbackPanel.SetActive(true);
+            feedbackText.text = "Congratulations! You've completed the quiz! 🎉";
+            currentQuestionIndex = 0; // Reset for next time
+        }
+    }
+
+    private void SelectAnswer(int index)
+    {
+        selectedAnswerIndex = index;
+        confirmButton.gameObject.SetActive(true);
+    }
+
+    private void ConfirmAnswer()
+    {
+        confirmButton.gameObject.SetActive(false);
+        OnQuizAnswerSelected(selectedAnswerIndex);
     }
 
     private void OnQuizAnswerSelected(int index)
     {
-        bool isCorrect = index == suffixQuestion.correctAnswerIndex;
+        bool isCorrect = index == questions[currentQuestionIndex].correctAnswerIndex;
 
-        optionsPanel.SetActive(false);
         feedbackPanel.SetActive(true);
         feedbackText.text = isCorrect ? "Correct! 🎉" : "Wrong answer. Try again.";
 
-        if (!isCorrect)
+        if (isCorrect)
         {
-            Invoke(nameof(ResetQuiz), 2f);
+            currentQuestionIndex++;
+            Invoke(nameof(ShowQuiz), 2f);
         }
         else
         {
-            Debug.Log("Quiz completed successfully!");
-            // Optionally: unlock next step or trigger event here
+            Invoke(nameof(ResetQuiz), 2f);
         }
     }
 
