@@ -1849,7 +1849,6 @@ MonoBehaviour:
   confirmButton: {fileID: 442929706}
   simpleBubble: {fileID: 367899057}
   simpleBubbleText: {fileID: 1769259210}
-  allQuizzes: []
 --- !u!4 &640517826
 Transform:
   m_ObjectHideFlags: 0
@@ -3233,7 +3232,6 @@ MonoBehaviour:
   dialogueUI: {fileID: 1613774210}
   dialogueText: {fileID: 225948317}
   npcDialogue: sticking out your gyatt for the rizzler
-  npcName: 
 --- !u!114 &880353120
 MonoBehaviour:
   m_ObjectHideFlags: 0
