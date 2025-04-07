@@ -263,8 +263,19 @@ public class UIManager : MonoBehaviour
         // Update question text to show selected option
         string originalQuestion = currentQuizQuestions[currentQuestionIndex].question;
         string selectedOption = currentQuizQuestions[currentQuestionIndex].options[index];
-        questionText.text = originalQuestion.Replace("[alis]", selectedOption);
-        questionText.text = originalQuestion.Replace("[dilig]", selectedOption);
+        
+        // Find the placeholder word in the question (e.g., [alis] or [dilig])
+        int startIndex = originalQuestion.IndexOf('[');
+        int endIndex = originalQuestion.IndexOf(']');
+        if (startIndex != -1 && endIndex != -1)
+        {
+            string placeholder = originalQuestion.Substring(startIndex, endIndex - startIndex + 1);
+            questionText.text = originalQuestion.Replace(placeholder, selectedOption);
+        }
+        else
+        {
+            questionText.text = originalQuestion;
+        }
     }
 
     private void ConfirmAnswer()
