@@ -21,6 +21,7 @@ public class NPCDialogue : MonoBehaviour
     {
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
+            UIManager.instance.SetNPCDialogueSet(gameObject.tag);
             UIManager.instance.ShowBubbles(true, npcDialogue);
             UIManager.instance.ShowInteractPrompt(false);
         }

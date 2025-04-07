@@ -27,17 +27,6 @@ public class UIManager : MonoBehaviour
     public GameObject simpleBubble;
     public TextMeshProUGUI simpleBubbleText;
 
-    private List<string> dialogues = new List<string>
-    {
-        "Hi there! I'm your guide today.",
-        "Let's talk about suffixes.",
-        "A suffix is a group of letters placed at the end of a word to change its meaning.",
-        "For example, adding '-ness' to 'happy' makes 'happiness'.",
-        "Ready to test your knowledge?"
-    };
-
-    private int currentIndex = 0;
-
     [System.Serializable]
     public class QuestionData
     {
@@ -46,9 +35,20 @@ public class UIManager : MonoBehaviour
         public int correctAnswerIndex;
     }
 
-    private List<QuestionData> quizQuestions;
+    [System.Serializable]
+    public class NPCDialogueSet
+    {
+        public string npcTag;
+        public List<string> dialogues;
+        public List<QuestionData> questions;
+    }
+
+    public List<NPCDialogueSet> npcDialogueSets;
+    private List<QuestionData> currentQuizQuestions;
+    private List<string> currentDialogues;
     private int currentQuestionIndex = 0;
     private int selectedOptionIndex = -1;
+    private int currentIndex = 0;
 
     private void Awake()
     {
@@ -62,35 +62,115 @@ public class UIManager : MonoBehaviour
         rightArrow.onClick.AddListener(NextDialogue);
         confirmButton.onClick.AddListener(ConfirmAnswer);
 
-        UpdateDialogue();
         interactiveBubble.SetActive(false);
         simpleBubble.SetActive(false);
         optionsPanel.SetActive(false);
         feedbackPanel.SetActive(false);
         confirmButton.gameObject.SetActive(false);
 
-        // Initialize quiz questions
-        quizQuestions = new List<QuestionData>
+        // Initialize NPC dialogue sets
+        npcDialogueSets = new List<NPCDialogueSet>
         {
-            new QuestionData
+            new NPCDialogueSet
             {
-                question = "Ngayon lang tayo nagkakilala tapos [alis] mo na ako sa buhay mo? Wahhh...",
-                options = new string[] { "aalisin", "Alisin", "Umalis" },
-                correctAnswerIndex = 0
+                npcTag = "Teacher",
+                dialogues = new List<string>
+                {
+                    "Kamusta! Ako si teacher.",
+                    "ANSWER THIS"
+                },
+                questions = new List<QuestionData>
+                {
+                    new QuestionData
+                    {
+                        question = "Ngayon lang tayo nagkakilala tapos [alis] mo na ako sa buhay mo? Wahhh...",
+                        options = new string[] { "aalisin", "Alisin", "Umalis" },
+                        correctAnswerIndex = 0
+                    },
+                    new QuestionData
+                    {
+                        question = "[alis] muna natin 'to sa isip natin... May bukas pa naman!",
+                        options = new string[] { "aalisin", "Alisin", "Umalis" },
+                        correctAnswerIndex = 1
+                    },
+                    new QuestionData
+                    {
+                        question = "Tara! [alis] na tayo ngayon!",
+                        options = new string[] { "aalisin", "Alisin", "Umalis" },
+                        correctAnswerIndex = 2
+                    }
+                }
             },
-            new QuestionData
+            new NPCDialogueSet
             {
-                question = "[alis] muna natin 'to sa isip natin... May bukas pa naman!",
-                options = new string[] { "aalisin", "Alisin", "Umalis" },
-                correctAnswerIndex = 1
+                npcTag = "Gardener",
+                dialogues = new List<string>
+                {
+                    "Hi! Ako si Juan, isang gardener.",
+                    "tulong sa sagot hehe",
+                },
+                questions = new List<QuestionData>
+                {
+                    new QuestionData
+                    {
+                        question = "Mamaya ko na [dilig] ang mga gumamela.",
+                        options = new string[] { "didiligan", "Dinidiligan", "Diniligan" },
+                        correctAnswerIndex = 0
+                    },
+                    new QuestionData
+                    {
+                        question = "Dinidiligan ko ngayon ang mga gumamela.",
+                        options = new string[] { "didiligan", "Dinidiligan", "Diniligan" },
+                        correctAnswerIndex = 1
+                    }
+                }
             },
-            new QuestionData
+            new NPCDialogueSet
             {
-                question = "Tara! [alis] na tayo ngayon!",
-                options = new string[] { "aalisin", "Alisin", "Umalis" },
-                correctAnswerIndex = 2
+                npcTag = "Student",
+                dialogues = new List<string>
+                {
+                    "Magandang araw! Ako ang librarian.",
+                    "Marami tayong aklat tungkol sa wika.",
+                    "Gusto mo bang magsanay sa paggamit ng pandiwa?"
+                },
+                questions = new List<QuestionData>
+                {
+                    new QuestionData
+                    {
+                        question = "Ano ang tamang pandiwa para sa 'sulat': [sulat]",
+                        options = new string[] { "sumulat", "Sulatin", "Isusulat" },
+                        correctAnswerIndex = 0
+                    },
+                    new QuestionData
+                    {
+                        question = "Tama ba ang pandiwang ito: [tulog]",
+                        options = new string[] { "matulog", "Tulugin", "Itutulog" },
+                        correctAnswerIndex = 0
+                    }
+                }
             }
         };
+
+        UpdateDialogue();
+        interactiveBubble.SetActive(false);
+        simpleBubble.SetActive(false);
+        optionsPanel.SetActive(false);
+        feedbackPanel.SetActive(false);
+        confirmButton.gameObject.SetActive(false);
+    }
+
+    public void SetNPCDialogueSet(string npcTag)
+    {
+        NPCDialogueSet dialogueSet = npcDialogueSets.Find(set => set.npcTag == npcTag);
+        if (dialogueSet != null)
+        {
+            currentDialogues = dialogueSet.dialogues;
+            currentQuizQuestions = dialogueSet.questions;
+            currentIndex = 0;
+            currentQuestionIndex = 0;
+            UpdateDialogue();
+        }
     }
 
     public void ShowInteractPrompt(bool state)
@@ -109,9 +189,9 @@ public class UIManager : MonoBehaviour
 
     private void UpdateDialogue()
     {
-        if (currentIndex < dialogues.Count)
+        if (currentIndex < currentDialogues.Count)
         {
-            dialogueText.text = dialogues[currentIndex];
+            dialogueText.text = currentDialogues[currentIndex];
             ShowArrows(true);
         }
         else
@@ -133,7 +213,7 @@ public class UIManager : MonoBehaviour
 
     public void NextDialogue()
     {
-        if (currentIndex < dialogues.Count)
+        if (currentIndex < currentDialogues.Count)
         {
             currentIndex++;
             UpdateDialogue();
@@ -148,16 +228,16 @@ public class UIManager : MonoBehaviour
 
     private void ShowQuiz()
     {
-        if (currentQuestionIndex < quizQuestions.Count)
+        if (currentQuestionIndex < currentQuizQuestions.Count)
         {
             optionsPanel.SetActive(true);
             confirmButton.gameObject.SetActive(false);
-            questionText.text = quizQuestions[currentQuestionIndex].question;
+            questionText.text = currentQuizQuestions[currentQuestionIndex].question;
             selectedOptionIndex = -1;
 
             for (int i = 0; i < optionButtons.Length; i++)
             {
-                optionButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = quizQuestions[currentQuestionIndex].options[i];
+                optionButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = currentQuizQuestions[currentQuestionIndex].options[i];
                 optionButtons[i].onClick.RemoveAllListeners();
 
                 int index = i;
@@ -181,9 +261,10 @@ public class UIManager : MonoBehaviour
         confirmButton.gameObject.SetActive(true);
         
         // Update question text to show selected option
-        string originalQuestion = quizQuestions[currentQuestionIndex].question;
-        string selectedOption = quizQuestions[currentQuestionIndex].options[index];
+        string originalQuestion = currentQuizQuestions[currentQuestionIndex].question;
+        string selectedOption = currentQuizQuestions[currentQuestionIndex].options[index];
         questionText.text = originalQuestion.Replace("[alis]", selectedOption);
+        questionText.text = originalQuestion.Replace("[dilig]", selectedOption);
     }
 
     private void ConfirmAnswer()
@@ -194,11 +275,11 @@ public class UIManager : MonoBehaviour
 
     private void OnQuizAnswerSelected(int index)
     {
-        bool isCorrect = index == quizQuestions[currentQuestionIndex].correctAnswerIndex;
+        bool isCorrect = index == currentQuizQuestions[currentQuestionIndex].correctAnswerIndex;
 
         optionsPanel.SetActive(false);
         feedbackPanel.SetActive(true);
-        feedbackText.text = isCorrect ? "Correct! 🎉" : "Wrong answer. Try again.";
+        feedbackText.text = isCorrect ? "nice one badi! 🎉" : "Parang mali… Nagmamadali na tayo!";
 
         if (isCorrect)
         {
