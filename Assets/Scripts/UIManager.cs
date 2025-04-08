@@ -88,19 +88,19 @@ public class UIManager : MonoBehaviour
                     new QuestionData
                     {
                         question = "Ngayon lang tayo nagkakilala tapos [alis] mo na ako sa buhay mo? Wahhh...",
-                        options = new string[] { "aalisin", "Alisin", "Umalis" },
+                        options = new string[] { "aalisin", "alisin", "umalis" },
                         correctAnswerIndex = 0
                     },
                     new QuestionData
                     {
                         question = "[alis] muna natin 'to sa isip natin... May bukas pa naman!",
-                        options = new string[] { "aalisin", "Alisin", "Umalis" },
+                        options = new string[] { "aalisin", "alisin", "umalis" },
                         correctAnswerIndex = 1
                     },
                     new QuestionData
                     {
                         question = "Tara! [alis] na tayo ngayon!",
-                        options = new string[] { "aalisin", "Alisin", "Umalis" },
+                        options = new string[] { "aalisin", "alisin", "umalis" },
                         correctAnswerIndex = 2
                     }
                 }
@@ -118,39 +118,20 @@ public class UIManager : MonoBehaviour
                     new QuestionData
                     {
                         question = "Mamaya ko na [dilig] ang mga gumamela.",
-                        options = new string[] { "didiligan", "Dinidiligan", "Diniligan" },
+                        options = new string[] { "didiligan", "dinidiligan", "diniligan" },
                         correctAnswerIndex = 0
                     },
                     new QuestionData
                     {
-                        question = "Dinidiligan ko ngayon ang mga gumamela.",
-                        options = new string[] { "didiligan", "Dinidiligan", "Diniligan" },
+                        question = "[dilig] ko ngayon ang mga gumamela.",
+                        options = new string[] { "didiligan", "dinidiligan", "diniligan" },
                         correctAnswerIndex = 1
-                    }
-                }
-            },
-            new NPCDialogueSet
-            {
-                npcTag = "Student",
-                dialogues = new List<string>
-                {
-                    "Magandang araw! Ako ang librarian.",
-                    "Marami tayong aklat tungkol sa wika.",
-                    "Gusto mo bang magsanay sa paggamit ng pandiwa?"
-                },
-                questions = new List<QuestionData>
-                {
-                    new QuestionData
-                    {
-                        question = "Ano ang tamang pandiwa para sa 'sulat': [sulat]",
-                        options = new string[] { "sumulat", "Sulatin", "Isusulat" },
-                        correctAnswerIndex = 0
                     },
                     new QuestionData
                     {
-                        question = "Tama ba ang pandiwang ito: [tulog]",
-                        options = new string[] { "matulog", "Tulugin", "Itutulog" },
-                        correctAnswerIndex = 0
+                        question = "[dilig] ko na ang mga gumamela kaninang umaga.",
+                        options = new string[] { "didiligan", "dinidiligan", "diniligan" },
+                        correctAnswerIndex = 2
                     }
                 }
             }
