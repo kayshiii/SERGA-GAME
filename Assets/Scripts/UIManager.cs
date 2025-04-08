@@ -23,6 +23,9 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI feedbackText;
     public Button confirmButton; // Add this in Inspector
 
+    [Header("Pause UI")]
+    public Button pauseButton; // Add this in Inspector
+
     [Header("Simple Thought Bubble")]
     public GameObject simpleBubble;
     public TextMeshProUGUI simpleBubbleText;
@@ -61,6 +64,7 @@ public class UIManager : MonoBehaviour
         leftArrow.onClick.AddListener(PreviousDialogue);
         rightArrow.onClick.AddListener(NextDialogue);
         confirmButton.onClick.AddListener(ConfirmAnswer);
+        pauseButton.onClick.AddListener(() => PauseManager.instance.TogglePause());
 
         interactiveBubble.SetActive(false);
         simpleBubble.SetActive(false);
