@@ -1,0 +1,413 @@
+fileFormatVersion: 2
+guid: 5ffd3de3a09d5ff42a5406562af0f106
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sam - SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1548
+        width: 167
+        height: 445
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aa58b32bc6208a43a9a3680e483d1c6
+      internalID: 487801085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sam - SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 1077
+        width: 142
+        height: 447
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3b8a52a42edef848a8e67d11eef3a10
+      internalID: -1705630997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sam - SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 1072
+        width: 142
+        height: 447
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad43d239e48a5946a8da200a83b68b9
+      internalID: 848587588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sam - SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 601
+        width: 165
+        height: 450
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccde4423623e5e840a396607e6afeadb
+      internalID: -628932604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sam - SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 601
+        width: 165
+        height: 450
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8877acc5c9aa1d0488506d123745e2cb
+      internalID: 1870918159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sam - SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 601
+        width: 165
+        height: 450
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89934aac5efaf1b408b28ddfdd91b2b1
+      internalID: -451002568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sam - SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 0
+        width: 274
+        height: 596
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aab243f20daf5746a1d6b94ab814c3b
+      internalID: 1192838876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sam - SpriteSheet_27
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 0
+        width: 274
+        height: 596
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc3155d9e8868f44835ce6c68af2195
+      internalID: 324958812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sam - SpriteSheet_29
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 0
+        width: 274
+        height: 596
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a772aec0e78e244a3e9f3d8ed8d51d
+      internalID: 2084350208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sam - SpriteSheet_31
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 274
+        height: 596
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3d2e47bcf71e0d4084e9a353e7df8cf
+      internalID: 952310153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sam - SpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 1266
+        y: 0
+        width: 274
+        height: 596
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5585c294a6b9a9248927cbb0cc0f69bd
+      internalID: 1971586679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sam - SpriteSheet_35
+      rect:
+        serializedVersion: 2
+        x: 1571
+        y: 0
+        width: 274
+        height: 596
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e9d075d56ff224698428393168fc92
+      internalID: 233034563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 698c1ea2a1c84a34b880209d9ae0b761
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Sam - SpriteSheet_0: 487801085
+      Sam - SpriteSheet_1: -1558329095
+      Sam - SpriteSheet_10: 1870918159
+      Sam - SpriteSheet_11: -1636486078
+      Sam - SpriteSheet_12: -451002568
+      Sam - SpriteSheet_13: 670179035
+      Sam - SpriteSheet_14: 257226644
+      Sam - SpriteSheet_15: 1058884982
+      Sam - SpriteSheet_16: 444268779
+      Sam - SpriteSheet_17: -2082590715
+      Sam - SpriteSheet_18: 180670149
+      Sam - SpriteSheet_19: 1615862485
+      Sam - SpriteSheet_2: -1705630997
+      Sam - SpriteSheet_20: 155951176
+      Sam - SpriteSheet_21: 1089900267
+      Sam - SpriteSheet_22: -1842165363
+      Sam - SpriteSheet_23: -1796143435
+      Sam - SpriteSheet_24: -1412734329
+      Sam - SpriteSheet_25: 1192838876
+      Sam - SpriteSheet_26: 1693549713
+      Sam - SpriteSheet_27: 324958812
+      Sam - SpriteSheet_28: -1220031555
+      Sam - SpriteSheet_29: 2084350208
+      Sam - SpriteSheet_3: -1543125906
+      Sam - SpriteSheet_30: 1657853038
+      Sam - SpriteSheet_31: 952310153
+      Sam - SpriteSheet_32: 77660545
+      Sam - SpriteSheet_33: 1971586679
+      Sam - SpriteSheet_34: 326051277
+      Sam - SpriteSheet_35: 233034563
+      Sam - SpriteSheet_36: -2039058960
+      Sam - SpriteSheet_37: -910377700
+      Sam - SpriteSheet_38: 473886974
+      Sam - SpriteSheet_39: -868030757
+      Sam - SpriteSheet_4: 848587588
+      Sam - SpriteSheet_40: 1343968147
+      Sam - SpriteSheet_41: 1453514732
+      Sam - SpriteSheet_42: -440431345
+      Sam - SpriteSheet_43: -2087836789
+      Sam - SpriteSheet_44: 582696364
+      Sam - SpriteSheet_45: -2109287059
+      Sam - SpriteSheet_46: 639342736
+      Sam - SpriteSheet_5: -1881764546
+      Sam - SpriteSheet_6: 178473191
+      Sam - SpriteSheet_7: -6945316
+      Sam - SpriteSheet_8: 403768181
+      Sam - SpriteSheet_9: -628932604
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
