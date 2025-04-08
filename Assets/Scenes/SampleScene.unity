@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 146583271}
   - component: {fileID: 146583270}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Option 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 225948318}
   - component: {fileID: 225948317}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: NPC Panel Text (inter)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1457,7 +1457,7 @@ GameObject:
   - component: {fileID: 442929707}
   - component: {fileID: 442929706}
   m_Layer: 5
-  m_Name: confirm
+  m_Name: Confirm Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2144,7 +2144,7 @@ GameObject:
   - component: {fileID: 686245384}
   - component: {fileID: 686245383}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Left Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2419,7 +2419,7 @@ GameObject:
   - component: {fileID: 716398120}
   - component: {fileID: 716398119}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Option 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2780,7 +2780,7 @@ GameObject:
   - component: {fileID: 781020073}
   - component: {fileID: 781020072}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Right Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6771,7 +6771,7 @@ GameObject:
   - component: {fileID: 1756798185}
   - component: {fileID: 1756798184}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Quit Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6891,7 +6891,7 @@ GameObject:
   - component: {fileID: 1769259211}
   - component: {fileID: 1769259210}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: NPC Panel Text (non inter)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7477,7 +7477,7 @@ GameObject:
   - component: {fileID: 1891092599}
   - component: {fileID: 1891092598}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Option 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7598,7 +7598,7 @@ GameObject:
   - component: {fileID: 1928434618}
   - component: {fileID: 1928434620}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Resume Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
