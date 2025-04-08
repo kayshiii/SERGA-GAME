@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 937557ae4d507234889341ff3b8a9c3c
+guid: 585d04fbfae750a45a13defe04ef08e0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI dialogue box main_0
+      name: UI dialogue box arrows_0
       rect:
         serializedVersion: 2
-        x: 635
-        y: 491
-        width: 650
-        height: 262
+        x: 610
+        y: 623
+        width: 49
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,8 +111,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e28b15fb0076ec46bebd8c8f9708603
-      internalID: 463725757
+      spriteID: fe5e654a319a3464bb3b80aefe67e7fa
+      internalID: -192116832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI dialogue box arrows_1
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 623
+        width: 49
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f33dabda68ef4614ea272d6aaa93a6f0
+      internalID: -523011783
       vertices: []
       indices: 
       edges: []
@@ -128,7 +149,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UI dialogue box main_0: 463725757
+      UI dialogue box arrows_0: -192116832
+      UI dialogue box arrows_1: -523011783
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
