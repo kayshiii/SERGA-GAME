@@ -21,12 +21,12 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI questionText;
     public GameObject feedbackPanel;
     public TextMeshProUGUI feedbackText;
-    public Button confirmButton; // Add this in Inspector
-    public GameObject questionSelectionPanel; // Add this in Inspector
-    public Button[] questionButtons; // Set this to 3 buttons in Inspector
+    public Button confirmButton; 
+    public GameObject questionSelectionPanel; 
+    public Button[] questionButtons; 
 
     [Header("Pause UI")]
-    public Button pauseButton; // Add this in Inspector
+    public Button pauseButton; 
 
     [Header("Simple Thought Bubble")]
     public GameObject simpleBubble;
