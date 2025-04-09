@@ -25,23 +25,7 @@ public class NPCDialogue : MonoBehaviour
             UIManager.instance.ShowBubbles(true, npcDialogue);
             UIManager.instance.ShowInteractPrompt(false);
         }
-
-        /*if (dialogueUI.activeSelf)
-        {
-            //PositionDialogueUI();
-        }*/
     }
-/*    private void PositionDialogueUI()
-    {
-        Vector3 worldPosition = transform.position + new Vector3(0, 8f, 0); // Interactive bubble at 8f
-        Vector3 simpleBubblePosition = transform.position + new Vector3(0, 9f, 0); // Simple bubble at 9f
-
-        Vector3 screenPosition = mainCamera.WorldToScreenPoint(worldPosition);
-        Vector3 simpleScreenPosition = mainCamera.WorldToScreenPoint(simpleBubblePosition);
-
-        UIManager.instance.interactiveBubble.transform.position = screenPosition;
-        UIManager.instance.simpleBubble.transform.position = simpleScreenPosition;
-    }*/
 
     private void OnTriggerEnter(Collider other)
     {

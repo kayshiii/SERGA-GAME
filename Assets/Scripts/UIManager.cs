@@ -22,6 +22,8 @@ public class UIManager : MonoBehaviour
     public GameObject feedbackPanel;
     public TextMeshProUGUI feedbackText;
     public Button confirmButton; // Add this in Inspector
+    public GameObject questionSelectionPanel; // Add this in Inspector
+    public Button[] questionButtons; // Set this to 3 buttons in Inspector
 
     [Header("Pause UI")]
     public Button pauseButton; // Add this in Inspector
@@ -71,6 +73,14 @@ public class UIManager : MonoBehaviour
         optionsPanel.SetActive(false);
         feedbackPanel.SetActive(false);
         confirmButton.gameObject.SetActive(false);
+        questionSelectionPanel.SetActive(false);
+
+        // Initialize question buttons
+        for (int i = 0; i < questionButtons.Length; i++)
+        {
+            int index = i;
+            questionButtons[i].onClick.AddListener(() => SelectQuestion(index));
+        }
 
         // Initialize NPC dialogue sets
         npcDialogueSets = new List<NPCDialogueSet>
@@ -80,27 +90,27 @@ public class UIManager : MonoBehaviour
                 npcTag = "Teacher",
                 dialogues = new List<string>
                 {
-                    "Kamusta! Ako si teacher.",
-                    "ANSWER THIS"
+                    "Kamusta! Ako si Sam.",
+                    "Tulungan mo ko!"
                 },
                 questions = new List<QuestionData>
                 {
                     new QuestionData
                     {
-                        question = "Ngayon lang tayo nagkakilala tapos [alis] mo na ako sa buhay mo? Wahhh...",
-                        options = new string[] { "aalisin", "alisin", "umalis" },
+                        question = "Kailan kaya ulit [dila] ng aso yung pusa…?",
+                        options = new string[] { "didilaan", "dinilaan", "dinidilaan" },
                         correctAnswerIndex = 0
                     },
                     new QuestionData
                     {
-                        question = "[alis] muna natin 'to sa isip natin... May bukas pa naman!",
-                        options = new string[] { "aalisin", "alisin", "umalis" },
+                        question = "[dila] ng aso yung pusa kani-kanina lang… Di ko nakuhaan ng picture…",
+                        options = new string[] { "didilaan", "dinilaan", "dinidilaan" },
                         correctAnswerIndex = 1
                     },
                     new QuestionData
                     {
-                        question = "Tara! [alis] na tayo ngayon!",
-                        options = new string[] { "aalisin", "alisin", "umalis" },
+                        question = "Ang cute! [dila] ng aso yung pusa ngayon! Kuhaan ko nga ng picture!",
+                        options = new string[] { "didilaan", "dinilaan", "dinidilaan" },
                         correctAnswerIndex = 2
                     }
                 }
@@ -213,8 +223,34 @@ public class UIManager : MonoBehaviour
 
     private void ShowQuiz()
     {
-        if (currentQuestionIndex < currentQuizQuestions.Count)
+        if (currentQuizQuestions != null && currentQuizQuestions.Count > 0)
         {
+            questionSelectionPanel.SetActive(true);
+            optionsPanel.SetActive(false);
+            confirmButton.gameObject.SetActive(false);
+            feedbackPanel.SetActive(false);
+
+            // Update question button texts
+            for (int i = 0; i < questionButtons.Length; i++)
+            {
+                if (i < currentQuizQuestions.Count)
+                {
+                    questionButtons[i].gameObject.SetActive(true);
+                }
+                else
+                {
+                    questionButtons[i].gameObject.SetActive(false);
+                }
+            }
+        }
+    }
+
+    private void SelectQuestion(int questionIndex)
+    {
+        if (questionIndex < currentQuizQuestions.Count)
+        {
+            currentQuestionIndex = questionIndex;
+            questionSelectionPanel.SetActive(true);
             optionsPanel.SetActive(true);
             confirmButton.gameObject.SetActive(false);
             questionText.text = currentQuizQuestions[currentQuestionIndex].question;
@@ -229,21 +265,13 @@ public class UIManager : MonoBehaviour
                 optionButtons[i].onClick.AddListener(() => OnOptionSelected(index));
             }
         }
-        else
-        {
-            // Quiz completed
-            optionsPanel.SetActive(false);
-            confirmButton.gameObject.SetActive(false);
-            feedbackPanel.SetActive(true);
-            feedbackText.text = "Congratulations! You've completed all questions! 🎉";
-            currentQuestionIndex = 0; // Reset for next time
-        }
     }
 
     private void OnOptionSelected(int index)
     {
         selectedOptionIndex = index;
         confirmButton.gameObject.SetActive(true);
+        questionSelectionPanel.SetActive(false);
         
         // Update question text to show selected option
         string originalQuestion = currentQuizQuestions[currentQuestionIndex].question;
@@ -279,8 +307,19 @@ public class UIManager : MonoBehaviour
 
         if (isCorrect)
         {
-            currentQuestionIndex++;
-            Invoke(nameof(ShowQuiz), 2f);
+            // Remove the answered question
+            currentQuizQuestions.RemoveAt(currentQuestionIndex);
+            
+            // If all questions are answered
+            if (currentQuizQuestions.Count == 0)
+            {
+                feedbackText.text = "Congratulations! You've completed all questions! 🎉";
+                Invoke(nameof(ResetQuiz), 2f);
+            }
+            else
+            {
+                Invoke(nameof(ShowQuiz), 2f);
+            }
         }
         else
         {
