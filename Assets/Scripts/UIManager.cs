@@ -54,6 +54,8 @@ public class UIManager : MonoBehaviour
     private int currentQuestionIndex = 0;
     private int selectedOptionIndex = -1;
     private int currentIndex = 0;
+    private string currentNPCTag;
+
 
     private void Awake()
     {
@@ -160,6 +162,7 @@ public class UIManager : MonoBehaviour
         NPCDialogueSet dialogueSet = npcDialogueSets.Find(set => set.npcTag == npcTag);
         if (dialogueSet != null)
         {
+            currentNPCTag = npcTag; // Store current NPC's tag
             currentDialogues = dialogueSet.dialogues;
             currentQuizQuestions = dialogueSet.questions;
             currentIndex = 0;
@@ -297,7 +300,7 @@ public class UIManager : MonoBehaviour
         OnQuizAnswerSelected(selectedOptionIndex);
     }
 
-    private void OnQuizAnswerSelected(int index)
+    public void OnQuizAnswerSelected(int index)
     {
         bool isCorrect = index == currentQuizQuestions[currentQuestionIndex].correctAnswerIndex;
 
@@ -315,6 +318,16 @@ public class UIManager : MonoBehaviour
             {
                 feedbackText.text = "Congratulations! You've completed all questions! 🎉";
                 Invoke(nameof(ResetQuiz), 2f);
+                switch(currentNPCTag)
+                {
+                    case "Teacher":
+                        GameProgressionManager.instance.IncreaseProgress();
+                        break;
+                    case "Gardener":
+                        GameProgressionManager.instance.IncreaseProgress();
+                        break;
+                }
+
             }
             else
             {
