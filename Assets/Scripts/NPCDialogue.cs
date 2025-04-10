@@ -13,15 +13,17 @@ public class NPCDialogue : MonoBehaviour
     private bool isPlayerInRange = false;
     private Camera mainCamera;
 
+    private NPCBehavior npcBehavior;
     void Start()
     {
         mainCamera = Camera.main;
+        npcBehavior = GetComponent<NPCBehavior>();
     }
     void Update()
     {
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            UIManager.instance.SetNPCDialogueSet(gameObject.tag);
+            UIManager.instance.SetNPCDialogueSet(gameObject.tag, npcBehavior);
             UIManager.instance.ShowBubbles(true, npcDialogue);
             UIManager.instance.ShowInteractPrompt(false);
         }

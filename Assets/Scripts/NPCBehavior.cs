@@ -6,7 +6,10 @@ public class NPCBehavior : MonoBehaviour
 {
     [SerializeField] GameObject playerChar;
     [SerializeField] GameObject speechTrigger;
-    
+    [SerializeField] Animator npcAnimator;
+
+    [SerializeField] string[] animationTriggers = new string[3];
+
     void Start()
     {
         speechTrigger.SetActive(false);
@@ -14,11 +17,13 @@ public class NPCBehavior : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Pumasok");
         if (other.gameObject == playerChar)
         {
             speechTrigger.SetActive(true);
-            Debug.Log("Pumasok");
+            Debug.Log("Entered collider.");
+
+            string npcTag = GetNPCTag();
+            UIManager.instance.SetNPCDialogueSet(npcTag, this);
         }
     }
 
@@ -27,7 +32,19 @@ public class NPCBehavior : MonoBehaviour
         if (other.gameObject == playerChar)
         {
             speechTrigger.SetActive(false);
-            Debug.Log("Pumasok");
+            Debug.Log("Exited collider.");
         }
+    }
+    public void PlayReaction(int choiceIndex)
+    {
+        if (animationTriggers.Length > choiceIndex)
+        {
+            npcAnimator.SetTrigger(animationTriggers[choiceIndex]);
+        }
+    }
+
+    public string GetNPCTag()
+    {
+        return gameObject.tag;
     }
 }

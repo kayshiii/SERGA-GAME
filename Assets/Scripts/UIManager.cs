@@ -48,6 +48,8 @@ public class UIManager : MonoBehaviour
         public List<QuestionData> questions;
     }
 
+    [SerializeField] private NPCBehavior activeNPC; // To be set dynamically (during gameplay)
+
     public List<NPCDialogueSet> npcDialogueSets;
     private List<QuestionData> currentQuizQuestions;
     private List<string> currentDialogues;
@@ -55,6 +57,7 @@ public class UIManager : MonoBehaviour
     private int selectedOptionIndex = -1;
     private int currentIndex = 0;
     private string currentNPCTag;
+    public int correctOrWrong;
 
 
     private void Awake()
@@ -100,20 +103,20 @@ public class UIManager : MonoBehaviour
                     new QuestionData
                     {
                         question = "Kailan kaya ulit [dila] ng aso yung pusa…?",
-                        options = new string[] { "didilaan", "dinilaan", "dinidilaan" },
-                        correctAnswerIndex = 0
+                        options = new string[] { "dinilaan", "dinidilaan", "didilaan" },
+                        correctAnswerIndex = 2
                     },
                     new QuestionData
                     {
                         question = "[dila] ng aso yung pusa kani-kanina lang… Di ko nakuhaan ng picture…",
-                        options = new string[] { "didilaan", "dinilaan", "dinidilaan" },
-                        correctAnswerIndex = 1
+                        options = new string[] { "dinilaan", "dinidilaan", "didilaan" },
+                        correctAnswerIndex = 0
                     },
                     new QuestionData
                     {
                         question = "Ang cute! [dila] ng aso yung pusa ngayon! Kuhaan ko nga ng picture!",
-                        options = new string[] { "didilaan", "dinilaan", "dinidilaan" },
-                        correctAnswerIndex = 2
+                        options = new string[] { "dinilaan", "dinidilaan", "didilaan" },
+                        correctAnswerIndex = 1
                     }
                 }
             },
@@ -130,23 +133,54 @@ public class UIManager : MonoBehaviour
                     new QuestionData
                     {
                         question = "Mamaya ko na [dilig] ang mga gumamela.",
-                        options = new string[] { "didiligan", "dinidiligan", "diniligan" },
-                        correctAnswerIndex = 0
+                        options = new string[] { "diniligan", "dinidiligan", "didiligan" },
+                        correctAnswerIndex = 2
                     },
                     new QuestionData
                     {
-                        question = "[dilig] ko ngayon ang mga gumamela.",
-                        options = new string[] { "didiligan", "dinidiligan", "diniligan" },
+                        question = "[Dilig] ko ngayon ang mga gumamela.",
+                        options = new string[] { "Diniligan", "Dinidiligan", "Didiligan" },
                         correctAnswerIndex = 1
                     },
                     new QuestionData
                     {
-                        question = "[dilig] ko na ang mga gumamela kaninang umaga.",
-                        options = new string[] { "didiligan", "dinidiligan", "diniligan" },
+                        question = "[Dilig] ko na ang mga gumamela kaninang umaga.",
+                        options = new string[] { "Diniligan", "Dinidiligan", "Didiligan" },
+                        correctAnswerIndex = 0
+                    }
+                }
+            },
+            new NPCDialogueSet
+            {
+                npcTag = "Gamot",
+                dialogues = new List<string>
+                {
+                    "Nakainom ba ako ng gamot ko bago umalis ng bahay kanina?",
+                    "Sumasakit kasi ulo ko...",
+                },
+                questions = new List<QuestionData>
+                {
+                    new QuestionData
+                    {
+                        question = "Kung nadala ko lang sana yung gamot ko, edi sana [inom] ko na siya ngayon.",
+                        options = new string[] { "uminom", "iniinom", "iinom" },
+                        correctAnswerIndex = 1,
+                    },
+                    new QuestionData
+                    {
+                        question = "[Inom] na lang ako ng gamot paguwi ko. Sana hindi lumala itong sakit ng ulo ko…",
+                        options = new string[] { "Uminom", "Iniinom", "Iinom" },
                         correctAnswerIndex = 2
+                    },
+                    new QuestionData
+                    {
+                        question = "Buti na lang [inom] ako ng gamot, sa ganitong init baka sumakit ulit ulo ko.",
+                        options = new string[] { "uminom", "iniinom", "iinom" },
+                        correctAnswerIndex = 0
                     }
                 }
             }
+
         };
 
         UpdateDialogue();
@@ -157,16 +191,17 @@ public class UIManager : MonoBehaviour
         confirmButton.gameObject.SetActive(false);
     }
 
-    public void SetNPCDialogueSet(string npcTag)
+    public void SetNPCDialogueSet(string npcTag, NPCBehavior npc)
     {
         NPCDialogueSet dialogueSet = npcDialogueSets.Find(set => set.npcTag == npcTag);
         if (dialogueSet != null)
         {
-            currentNPCTag = npcTag; // Store current NPC's tag
+            currentNPCTag = npcTag;
             currentDialogues = dialogueSet.dialogues;
             currentQuizQuestions = dialogueSet.questions;
             currentIndex = 0;
             currentQuestionIndex = 0;
+            activeNPC = npc;
             UpdateDialogue();
         }
     }
@@ -304,6 +339,24 @@ public class UIManager : MonoBehaviour
     {
         bool isCorrect = index == currentQuizQuestions[currentQuestionIndex].correctAnswerIndex;
 
+        if (currentNPCTag == "Gamot") // If NPC only has correct/wrong animations
+        {
+            if (isCorrect)
+            {
+                correctOrWrong = 0;
+                activeNPC.PlayReaction(correctOrWrong); // Play "correct" animation
+            }
+            else if(!isCorrect)
+            {
+                correctOrWrong = 1;
+                activeNPC.PlayReaction(correctOrWrong); // Play "wrong" animation
+            }    
+        }
+        else // If NPC has unique animations per answer
+        {
+            activeNPC.PlayReaction(index); // Play NPC's reaction depending on player's answer
+        }
+
         optionsPanel.SetActive(false);
         feedbackPanel.SetActive(true);
         feedbackText.text = isCorrect ? "nice one badi! 🎉" : "Parang mali… Nagmamadali na tayo!";
@@ -324,6 +377,9 @@ public class UIManager : MonoBehaviour
                         GameProgressionManager.instance.IncreaseProgress();
                         break;
                     case "Gardener":
+                        GameProgressionManager.instance.IncreaseProgress();
+                        break;
+                    case "Gamot":
                         GameProgressionManager.instance.IncreaseProgress();
                         break;
                 }
