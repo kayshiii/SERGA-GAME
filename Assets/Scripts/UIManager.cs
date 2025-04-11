@@ -90,63 +90,95 @@ public class UIManager : MonoBehaviour
         // Initialize NPC dialogue sets
         npcDialogueSets = new List<NPCDialogueSet>
         {
+            // ------------------------------------------ SCENE 1: SCHOOL GARDEN (TUTORIAL) ------------------------------------------
             new NPCDialogueSet
             {
-                npcTag = "Teacher",
+                npcTag = "Tutorial",
                 dialogues = new List<string>
                 {
-                    "Kamusta! Ako si Sam.",
-                    "Tulungan mo ko!"
+                    "Andddd scene!",
+                    "Parang hindi ako nadala sa sinabi mo… Pindutin ang [R] upang bumalik sa simula ng usapan natin."
                 },
                 questions = new List<QuestionData>
                 {
                     new QuestionData
                     {
-                        question = "Kailan kaya ulit [dila] ng aso yung pusa…?",
-                        options = new string[] { "dinilaan", "dinidilaan", "didilaan" },
-                        correctAnswerIndex = 2
-                    },
-                    new QuestionData
-                    {
-                        question = "[dila] ng aso yung pusa kani-kanina lang… Di ko nakuhaan ng picture…",
-                        options = new string[] { "dinilaan", "dinidilaan", "didilaan" },
+                        question = "Ngayon lang tayo nagkakilala tapos [alis] mo na ako sa buhay mo? Wahhh...",
+                        options = new string[] { "<b>aalisin</b>", "<b>alisin</b>", "<b>umalis</b>" },
                         correctAnswerIndex = 0
                     },
                     new QuestionData
                     {
-                        question = "Ang cute! [dila] ng aso yung pusa ngayon! Kuhaan ko nga ng picture!",
-                        options = new string[] { "dinilaan", "dinidilaan", "didilaan" },
+                        question = "Tara! [Alis] na tayo ngayon!",
+                        options = new string[] { "<b>Aalisin</b>", "<b>Alisin</b>", "<b>Umalis</b>" },
+                        correctAnswerIndex = 2
+                    },
+                    new QuestionData
+                    {
+                        question = "[Alis] muna natin 'to sa isip natin... May bukas pa naman!",
+                        options = new string[] { "<b>Aalisin</b>", "<b>Alisin</b>", "<b>Umalis</b>" },
                         correctAnswerIndex = 1
                     }
                 }
             },
+            // ------------------------------------------ SCENE 1: SCHOOL GARDEN (PROPER) ------------------------------------------
             new NPCDialogueSet
             {
                 npcTag = "Gardener",
                 dialogues = new List<string>
                 {
-                    "Hi! Ako si Juan, isang gardener.",
-                    "tulong sa sagot hehe",
+                    "*nagiisip ng malalim*",
+                    "Hala, nakalimutan kong <b>diligan</b> ang mga gumamela!",
                 },
                 questions = new List<QuestionData>
                 {
                     new QuestionData
                     {
-                        question = "Mamaya ko na [dilig] ang mga gumamela.",
-                        options = new string[] { "diniligan", "dinidiligan", "didiligan" },
+                        question = "Mamaya ko na <b>[dilig]</b> ang mga gumamela.",
+                        options = new string[] { "<b>diniligan</b>", "<b>dinidiligan</b>", "<b>didiligan</b>" },
                         correctAnswerIndex = 2
                     },
                     new QuestionData
                     {
-                        question = "[Dilig] ko ngayon ang mga gumamela.",
-                        options = new string[] { "Diniligan", "Dinidiligan", "Didiligan" },
+                        question = "<b>[Dilig]</b> ko ngayon ang mga gumamela.",
+                        options = new string[] { "<b>Diniligan</b>", "<b>Dinidiligan</b>", "<b>Didiligan</b>" },
                         correctAnswerIndex = 1
                     },
                     new QuestionData
                     {
-                        question = "[Dilig] ko na ang mga gumamela kaninang umaga.",
-                        options = new string[] { "Diniligan", "Dinidiligan", "Didiligan" },
+                        question = "<b>[Dilig]</b> ko na ang mga gumamela kaninang umaga.",
+                        options = new string[] { "<b>Diniligan</b>", "<b>Dinidiligan</b>", "<b>Didiligan</b>" },
                         correctAnswerIndex = 0
+                    }
+                }
+            },
+            new NPCDialogueSet
+            {
+                npcTag = "Sam",
+                dialogues = new List<string>
+                {
+                    "hays..",
+                    "Sayang, di ko nakuhaan ng picture… Tapos nang <b>dilaan</b> ng aso yung pusa…"
+                },
+                questions = new List<QuestionData>
+                {
+                    new QuestionData
+                    {
+                        question = "Kailan kaya ulit <b>[dila]</b> ng aso yung pusa…?",
+                        options = new string[] { "<b>dinilaan</b>", "<b>dinidilaan</b>", "<b>didilaan</b>" },
+                        correctAnswerIndex = 2
+                    },
+                    new QuestionData
+                    {
+                        question = "<b>[dila]</b> ng aso yung pusa kani-kanina lang… Di ko nakuhaan ng picture…",
+                        options = new string[] { "<b>Dinilaan</b>", "<b>Dinidilaan</b>", "<b>Didilaan</b>" },
+                        correctAnswerIndex = 0
+                    },
+                    new QuestionData
+                    {
+                        question = "Ang cute! <b>[dila]</b> ng aso yung pusa ngayon! Kuhaan ko nga ng picture!",
+                        options = new string[] { "<b>Dinilaan</b>", "<b>Dinidilaan</b>", "<b>Didilaan</b>" },
+                        correctAnswerIndex = 1
                     }
                 }
             },
@@ -155,28 +187,209 @@ public class UIManager : MonoBehaviour
                 npcTag = "Gamot",
                 dialogues = new List<string>
                 {
-                    "Nakainom ba ako ng gamot ko bago umalis ng bahay kanina?",
+                    "<b>Nakainom</b> ba ako ng gamot ko bago umalis ng bahay kanina?",
                     "Sumasakit kasi ulo ko...",
                 },
                 questions = new List<QuestionData>
                 {
                     new QuestionData
                     {
-                        question = "Kung nadala ko lang sana yung gamot ko, edi sana [inom] ko na siya ngayon.",
-                        options = new string[] { "uminom", "iniinom", "iinom" },
+                        question = "Kung nadala ko lang sana yung gamot ko, edi sana <b>[inom]</b> ko na siya ngayon.",
+                        options = new string[] { "<b>uminom</b>", "<b>iniinom</b>", "<b>iinom</b>" },
                         correctAnswerIndex = 1,
                     },
                     new QuestionData
                     {
-                        question = "[Inom] na lang ako ng gamot paguwi ko. Sana hindi lumala itong sakit ng ulo ko…",
-                        options = new string[] { "Uminom", "Iniinom", "Iinom" },
+                        question = "<b>[Inom]</b> na lang ako ng gamot paguwi ko. Sana hindi lumala itong sakit ng ulo ko…",
+                        options = new string[] { "<b>Uminom", "<b>Iniinom</b>", "<b>Iinom</b>" },
                         correctAnswerIndex = 2
                     },
                     new QuestionData
                     {
-                        question = "Buti na lang [inom] ako ng gamot, sa ganitong init baka sumakit ulit ulo ko.",
-                        options = new string[] { "uminom", "iniinom", "iinom" },
+                        question = "Buti na lang <b>[inom]</b> ako ng gamot, sa ganitong init baka sumakit ulit ulo ko.",
+                        options = new string[] { "<b>uminom</b>", "<b>iniinom</b>", "<b>iinom</b>" },
                         correctAnswerIndex = 0
+                    }
+                }
+            },
+            // ------------------------------------------ SCENE 2: SCHOOL HALLWAY (PROPER) ------------------------------------------
+            new NPCDialogueSet
+            {
+                npcTag = "Jasmine",
+                dialogues = new List<string>
+                {
+                    "Hays!",
+                    "Kanina ka pa <b>naglalaro</b> dyan! Ako naman!",
+                },
+                questions = new List<QuestionData>
+                {
+                    new QuestionData
+                    {
+                        question = "Kanina mo pa <b>[laro]</b> 'yan! Ako naman!",
+                        options = new string[] { "<b>nilalaro</b>", "<b>makikipaglaro</b>", "laruin</b>" },
+                        correctAnswerIndex = 0,
+                    },
+                    new QuestionData
+                    {
+                        question = "<b>[Laro]</b> na lang ako sa iba! Ang damot-damot mo!",
+                        options = new string[] { "<b>Nilalaro</b>", "<b>Makikipaglaro</b>", "<b>Laruin</b>" },
+                        correctAnswerIndex = 1
+                    },
+                    new QuestionData
+                    {
+                        question = "Sabay na lang natin <b>[laro]</b> 'yan! Mas masaya pa!",
+                        options = new string[] { "<b>nilalaro</b>", "<b>makikipaglaro</b>", "<b>laruin</b>" },
+                        correctAnswerIndex = 2
+                    }
+                }
+            },
+            new NPCDialogueSet
+            {
+                npcTag = "Kyle",
+                dialogues = new List<string>
+                {
+                    "...",
+                    "Matagal ko nang <b>pinipigil</b> ang damdamin ko para sayo... Iligtas mo ako, Jenny!",
+                },
+                questions = new List<QuestionData>
+                {
+                    new QuestionData
+                    {
+                        question = "<b>[Pigil]</b> mo ang pagka-cute mo, Jenny! 'Wag ka tumingin sa akin!",
+                        options = new string[] { "<b>Makapipigil</b>", "<b>Pigilan</b>", "<b>Mapigil</b>" },
+                        correctAnswerIndex = 1,
+                    },
+                    new QuestionData
+                    {
+                        question = "Walang <b>[pigil]</b> sa akin! Ako lang ang para sayo, Jenny!",
+                        options = new string[] { "<b>makapipigil</b>", "<b>pigilan</b>", "<b>mapigil</b>" },
+                        correctAnswerIndex = 0
+                    },
+                    new QuestionData
+                    {
+                        question = "Hindi ko na <b>[pigil]</b> ang damdamin ko para sayo... Mahal kita, Jenny!",
+                        options = new string[] { "<b>makapipigil</b>", "<b>pigilan</b>", "<b>mapigil</b>" },
+                        correctAnswerIndex = 2
+                    }
+                }
+            },
+            new NPCDialogueSet
+            {
+                npcTag = "Maria",
+                dialogues = new List<string>
+                {
+                    "hmm...",
+                    "Bakit kailangan ko pang <b>bumili</b> ng regalo ni Kuya Don? Marami naman siyang pera.",
+                },
+                questions = new List<QuestionData>
+                {
+                    new QuestionData
+                    {
+                        question = "<b>[bili]</b> naman na ni Kuya Don lahat ng gusto niya. Hindi na niya kailangan ng regalo.",
+                        options = new string[] { "<b>Bumili</b>", "<b>Binili</b>", "<b>Binilhan</b>" },
+                        correctAnswerIndex = 1,
+                    },
+                    new QuestionData
+                    {
+                        question = "<b>[bili]</b> ko na ng regalo si Kuya Don. Tinatago ko lang sa inyo dahil sorpresa ito...",
+                        options = new string[] { "<b>Bumili</b>", "<b>Binili</b>", "<b>Binilhan</b>" },
+                        correctAnswerIndex = 2
+                    },
+                    new QuestionData
+                    {
+                        question = "<b>[bili]</b> naman na sila Mama ng regalo para kay Kuya Don. Hindi pa ba kasya yun?",
+                        options = new string[] { "<b>Bumili</b>", "<b>Binili</b>", "<b>Binilhan</b>" },
+                        correctAnswerIndex = 0
+                    }
+                }
+            },
+            // ------------------------------------------ SCENE 3: NEIGHBORHOOD (PROPER) ------------------------------------------
+            new NPCDialogueSet
+            {
+                npcTag = "Vendor",
+                dialogues = new List<string>
+                {
+                    "Isa pong taho, kuya…",
+                    "Naubos na lahat ng taho, bata. <b>Bumalik</b> ka na lang bukas.",
+                },
+                questions = new List<QuestionData>
+                {
+                    new QuestionData
+                    {
+                        question = "[Ubos] lang ng taho, pasenya na.",
+                        options = new string[] { "<b>Inuubos</b>", "<b>Kauubos</b>", "<b>Maubos</b>" },
+                        correctAnswerIndex = 1,
+                    },
+                    new QuestionData
+                    {
+                        question = "Malapit nang [ubos] ang taho! Buti na lang umabot ka pa!",
+                        options = new string[] { "<b>inuubos</b>", "<b>uauubos</b>", "<b>maubos</b>" },
+                        correctAnswerIndex = 2
+                    },
+                    new QuestionData
+                    {
+                        question = "Hindi mo naman [ubos] eh…",
+                        options = new string[] { "<b>inuubos</b>", "<b>kauubos</b>", "<b>maubos</b>" },
+                        correctAnswerIndex = 0
+                    }
+                }
+            },
+            new NPCDialogueSet
+            {
+                npcTag = "Elle",
+                dialogues = new List<string>
+                {
+                    "Nasaan na yung earphones na pinahiram ko sayo kahapon? Bago pa lang yun…",
+                    "Saan ko ba <b>iniwan</b> ang earphones ni Kris…?",
+                },
+                questions = new List<QuestionData>
+                {
+                    new QuestionData
+                    {
+                        question = "Ah, [iwan] ko sa sinuot kong pantalon kahapon! Teka, balikan ko sa bahay!",
+                        options = new string[] { "<b>iniiwan</b>", "<b>iniwan</b>", "<b>naiwan</b>" },
+                        correctAnswerIndex = 2,
+                    },
+                    new QuestionData
+                    {
+                        question = "Di ko alam… Kahit saan-saan ko kasi [iwan] mga gamit ko, pasensya na!",
+                        options = new string[] { "<b>iniiwan</b>", "<b>iniwan</b>", "<b>naiwan</b>" },
+                        correctAnswerIndex = 0
+                    },
+                    new QuestionData
+                    {
+                        question = "[Iwan] ka na ng earphones mo… Akin na siya, hehe",
+                        options = new string[] { "<b>Iniiwan</b>", "<b>Iniwan</b>", "<b>Naiwan</b>" },
+                        correctAnswerIndex = 1
+                    }
+                }
+            },
+            new NPCDialogueSet
+            {
+                npcTag = "Aling Anne",
+                dialogues = new List<string>
+                {
+                    "Mamaya na lang tayo mag-usap, ‘nak. <b>Nilalaba</b> ko ngayon ang damit ni Elle.",
+                },
+                questions = new List<QuestionData>
+                {
+                    new QuestionData
+                    {
+                        question = "<b>[Laba]</b> ko lang ng damit ni Elle. Sa wakas, may oras na ako para makapahinga…",
+                        options = new string[] { "<b>Kalalaba</b>", "<b>Naglalaba</b>", "<b>Maglalaba</b>" },
+                        correctAnswerIndex = 0,
+                    },
+                    new QuestionData
+                    {
+                        question = "Hay, medyo nalulungkot ako tuwing <b>[laba]</b> ako ng damit ni Elle… Dati, ang liliit pa lang ng sinusuot niya…",
+                        options = new string[] { "<b>kalalaba</b>", "<b>naglalaba</b>", "<b>maglalaba</b>" },
+                        correctAnswerIndex = 1
+                    },
+                    new QuestionData
+                    {
+                        question = "[Laba] na nga ako ng damit ni Elle habang may lakas pa ako...",
+                        options = new string[] { "<b>Kalalaba</b>", "<b>Naglalaba</b>", "<b>Maglalaba</b>" },
+                        correctAnswerIndex = 2
                     }
                 }
             }
