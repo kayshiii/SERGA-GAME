@@ -323,7 +323,7 @@ public class UIManager : MonoBehaviour
                     new QuestionData
                     {
                         question = "Malapit nang [ubos] ang taho! Buti na lang umabot ka pa!",
-                        options = new string[] { "<b>inuubos</b>", "<b>uauubos</b>", "<b>maubos</b>" },
+                        options = new string[] { "<b>inuubos</b>", "<b>mauubos</b>", "<b>maubos</b>" },
                         correctAnswerIndex = 2
                     },
                     new QuestionData
@@ -673,8 +673,25 @@ public class UIManager : MonoBehaviour
                     case "Gamot":
                         GameProgressionManager.instance.IncreaseProgress();
                         break;
+                    case "Jasmine":
+                        GameProgressionManager.instance.IncreaseProgress();
+                        break;
+                    case "Kyle":
+                        GameProgressionManager.instance.IncreaseProgress();
+                        break;
+                    case "Maria":
+                        GameProgressionManager.instance.IncreaseProgress();
+                        break;
+                    case "Vendor":
+                        GameProgressionManager.instance.IncreaseProgress();
+                        break;
+                    case "Elle":
+                        GameProgressionManager.instance.IncreaseProgress();
+                        break;
+                    case "Aling Anne":
+                        GameProgressionManager.instance.IncreaseProgress();
+                        break;
                 }
-
             }
             else
             {
