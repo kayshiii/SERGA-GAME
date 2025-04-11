@@ -650,7 +650,48 @@ public class UIManager : MonoBehaviour
 
         optionsPanel.SetActive(false);
         feedbackPanel.SetActive(true);
-        feedbackText.text = isCorrect ? "Nice one badi!!" : "Parang mali… Nagmamadali na tayo!";
+        
+        // Set feedback text based on NPC tag and correctness
+        if (isCorrect)
+        {
+            feedbackText.text = "Nice one!!!";
+        }
+        else
+        {
+            switch(currentNPCTag)
+            {
+                case "Gardener":
+                    feedbackText.text = "Maarte sa pagdilig ang gumamela. Dapat kanina pa ito nadiligan…";
+                    break;
+                case "Sam":
+                    feedbackText.text = "Dapat kuhaan ng picture ni Sam habang nangyayari ito…";
+                    break;
+                case "Gamot":
+                    feedbackText.text = "Kailangan niyang makainom ng gamot!";
+                    break;
+                case "Jasmine":
+                    feedbackText.text = "Hmph!";
+                    break;
+                case "Kyle":
+                    feedbackText.text = "Ha? Anong pinagsasabi mo?";
+                    break;
+                case "Maria":
+                    feedbackText.text = "Ang bait sa atin ni kuya tapos ganyan ka!";
+                    break;
+                case "Vendor":
+                    feedbackText.text = "Wahhh!!!";
+                    break;
+                case "Elle":
+                    feedbackText.text = "Kung hindi mo ibinalik sa akin, isusumbong kita sa tatay ko!";
+                    break;
+                case "Aling Anne":
+                    feedbackText.text = "Hala, nabasa na yung earphones ni Kris… Paano na ito?";
+                    break;
+                default:
+                    feedbackText.text = "Parang mali…";
+                    break;
+            }
+        }
 
         if (isCorrect)
         {
