@@ -24,7 +24,7 @@ public class PauseManager : MonoBehaviour
         
         // Add button listeners
         resumeButton.onClick.AddListener(ResumeGame);
-        quitButton.onClick.AddListener(QuitGame);
+        quitButton.onClick.AddListener(ReturnGame);
     }
 
     private void Update()
@@ -58,7 +58,7 @@ public class PauseManager : MonoBehaviour
         Cursor.visible = true;
     }
 
-    private void ResumeGame()
+    public void ResumeGame()
     {
         Time.timeScale = 1f; // Resume the game
         pauseMenu.SetActive(false);
@@ -67,7 +67,7 @@ public class PauseManager : MonoBehaviour
         isPaused = false;
     }
 
-    private void QuitGame()
+    public void ReturnGame()
     {
         SceneManager.LoadSceneAsync(0);
     }
