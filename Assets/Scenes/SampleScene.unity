@@ -2892,7 +2892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 0}
   dialogueText: {fileID: 225948317}
-  npcDialogue: 
+  npcDialogue: The school gardener forgot to water the gumamela, making it wilt.
 --- !u!136 &417623519
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7721,8 +7721,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8385,7 +8385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1132409888
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8766,8 +8766,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -9238,7 +9238,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 0}
   dialogueText: {fileID: 225948317}
-  npcDialogue: 
+  npcDialogue: Confession gone wrong. Kyle keeps being OA, and Jenny keeps interpret 
+    ing it wrong bc of what Kyle is saying
 --- !u!1 &1193203637
 GameObject:
   m_ObjectHideFlags: 0
@@ -9821,7 +9822,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 0}
   dialogueText: {fileID: 225948317}
-  npcDialogue: 
+  npcDialogue: "Argument between Angel\u2019s sassy classmate, Maria, and her twin
+    sister, Luisa. Maria didn\u2019t buy a birthday present for their older brother,
+    Don"
 --- !u!136 &1299633102
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10732,7 +10735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 0}
   dialogueText: {fileID: 225948317}
-  npcDialogue: 
+  npcDialogue: 'Argument between Jasmine and Rose sharing a toy '
 --- !u!136 &1399966027
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10976,8 +10979,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -11729,7 +11732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 0}
   dialogueText: {fileID: 225948317}
-  npcDialogue: 
+  npcDialogue: "Aling Anne is washing Elle\u2019s clothes."
 --- !u!114 &1516243127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13495,7 +13498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 0}
   dialogueText: {fileID: 225948317}
-  npcDialogue: 
+  npcDialogue: A kid wants to buy taho from a vendor, but it has already run out.
 --- !u!114 &1792823056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15372,7 +15375,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 0}
   dialogueText: {fileID: 225948317}
-  npcDialogue: 
+  npcDialogue: "Going to her friend Kris\u2019s house, Elle forgot that she had put
+    the earphones she borrowed in the pocket of the pants that she had worn the previous
+    day."
 --- !u!114 &2127687944
 MonoBehaviour:
   m_ObjectHideFlags: 0
