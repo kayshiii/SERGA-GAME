@@ -565,6 +565,84 @@ public class UIManager : MonoBehaviour
                 activeNPC.PlayReaction(correctOrWrong); // Play "wrong" animation
             }    
         }
+        else if (currentNPCTag == "Jasmine") // If NPC only has correct/wrong animations
+        {
+            if (isCorrect)
+            {
+                correctOrWrong = 0;
+                activeNPC.PlayReaction(correctOrWrong); // Play "correct" animation
+            }
+            else if(!isCorrect)
+            {
+                correctOrWrong = 1;
+                activeNPC.PlayReaction(correctOrWrong); // Play "wrong" animation
+            }    
+        }
+        else if (currentNPCTag == "Kyle") // If NPC only has correct/wrong animations
+        {
+            if (isCorrect)
+            {
+                correctOrWrong = 0;
+                activeNPC.PlayReaction(correctOrWrong); // Play "correct" animation
+            }
+            else if(!isCorrect)
+            {
+                correctOrWrong = 1;
+                activeNPC.PlayReaction(correctOrWrong); // Play "wrong" animation
+            }    
+        }
+        else if (currentNPCTag == "Maria") // If NPC only has correct/wrong animations
+        {
+            if (isCorrect)
+            {
+                correctOrWrong = 0;
+                activeNPC.PlayReaction(correctOrWrong); // Play "correct" animation
+            }
+            else if(!isCorrect)
+            {
+                correctOrWrong = 1;
+                activeNPC.PlayReaction(correctOrWrong); // Play "wrong" animation
+            }    
+        }
+        else if (currentNPCTag == "Vendor") // If NPC only has correct/wrong animations
+        {
+            if (isCorrect)
+            {
+                correctOrWrong = 0;
+                activeNPC.PlayReaction(correctOrWrong); // Play "correct" animation
+            }
+            else if(!isCorrect)
+            {
+                correctOrWrong = 1;
+                activeNPC.PlayReaction(correctOrWrong); // Play "wrong" animation
+            }    
+        }
+        else if (currentNPCTag == "Elle") // If NPC only has correct/wrong animations
+        {
+            if (isCorrect)
+            {
+                correctOrWrong = 0;
+                activeNPC.PlayReaction(correctOrWrong); // Play "correct" animation
+            }
+            else if(!isCorrect)
+            {
+                correctOrWrong = 1;
+                activeNPC.PlayReaction(correctOrWrong); // Play "wrong" animation
+            }    
+        }
+        else if (currentNPCTag == "Aling Anne") // If NPC only has correct/wrong animations
+        {
+            if (isCorrect)
+            {
+                correctOrWrong = 0;
+                activeNPC.PlayReaction(correctOrWrong); // Play "correct" animation
+            }
+            else if(!isCorrect)
+            {
+                correctOrWrong = 1;
+                activeNPC.PlayReaction(correctOrWrong); // Play "wrong" animation
+            }    
+        }
         else // If NPC has unique animations per answer
         {
             activeNPC.PlayReaction(index); // Play NPC's reaction depending on player's answer
@@ -572,7 +650,7 @@ public class UIManager : MonoBehaviour
 
         optionsPanel.SetActive(false);
         feedbackPanel.SetActive(true);
-        feedbackText.text = isCorrect ? "nice one badi! 🎉" : "Parang mali… Nagmamadali na tayo!";
+        feedbackText.text = isCorrect ? "Nice one badi!!" : "Parang mali… Nagmamadali na tayo!";
 
         if (isCorrect)
         {
@@ -582,14 +660,14 @@ public class UIManager : MonoBehaviour
             // If all questions are answered
             if (currentQuizQuestions.Count == 0)
             {
-                feedbackText.text = "Congratulations! You've completed all questions! 🎉";
+                feedbackText.text = "Nuks!! Nakumplento mo mga tanong ko! ";
                 Invoke(nameof(ResetQuiz), 2f);
                 switch(currentNPCTag)
                 {
-                    case "Teacher":
+                    case "Gardener":
                         GameProgressionManager.instance.IncreaseProgress();
                         break;
-                    case "Gardener":
+                    case "Sam":
                         GameProgressionManager.instance.IncreaseProgress();
                         break;
                     case "Gamot":
