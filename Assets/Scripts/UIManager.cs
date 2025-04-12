@@ -32,6 +32,21 @@ public class UIManager : MonoBehaviour
     public GameObject simpleBubble;
     public TextMeshProUGUI simpleBubbleText;
 
+    [Header("Opening Sequence")]
+    public List<string> openingDialogues;
+    private bool isOpeningSequence = false;
+    private bool isWaitingForFountain = false;
+    private bool isShowingMysteriousVoice = false;
+
+    [Header("Camera")]
+    public CameraFollow cameraFollow;
+    public Transform fountainTarget; // Assign the fountain's transform in the Inspector
+    private bool isWaitingForPan = false;
+
+    [Header("NPC Management")]
+    public GameObject[] npcs; // Assign all NPC GameObjects in the Inspector
+    public GameObject companion; // Reference to the companion (Pandiwata) GameObject
+
     [System.Serializable]
     public class QuestionData
     {
@@ -73,12 +88,18 @@ public class UIManager : MonoBehaviour
         confirmButton.onClick.AddListener(ConfirmAnswer);
         pauseButton.onClick.AddListener(() => PauseManager.instance.TogglePause());
 
-        interactiveBubble.SetActive(false);
         simpleBubble.SetActive(false);
         optionsPanel.SetActive(false);
         feedbackPanel.SetActive(false);
         confirmButton.gameObject.SetActive(false);
         questionSelectionPanel.SetActive(false);
+
+        // Disable all NPCs and companion at start
+        DisableAllNPCs();
+        if (companion != null)
+        {
+            companion.SetActive(false);
+        }
 
         // Initialize question buttons
         for (int i = 0; i < questionButtons.Length; i++)
@@ -86,6 +107,37 @@ public class UIManager : MonoBehaviour
             int index = i;
             questionButtons[i].onClick.AddListener(() => SelectQuestion(index));
         }
+
+        // Initialize opening dialogues
+        openingDialogues = new List<string>
+        {
+            "Hay… Pumunta ako rito sa hardin para magpaluwag pero…",
+            "…Nag-aalala pa rin ako sa quiz ko bukas na tungkol sa mga panlapi. Hirap na hirap talaga akong intindihin ang mga yun!",
+            "Paano na 'to? Huhu…",
+            "Huh? Teka lang…",
+            "Yan ba yung mahiwagang fountain na pinaguusapan ng mga kaklase ko? Ang fountain na nakatutupad ng mga hiling?",
+            "Nagbibiro lang ata sila eh, pero subukan ko na rin kaya…",
+            "Sana…",
+            "Makapasa ako sa quiz bukas!",
+            "...",
+            "...Kaninong laruan 'to?",
+            "Ako ay si Pandiwata! Isang diyosang nagbibigay ng swerte para sa kabutihan ng tao!",
+            "Nagsisinungaling ka ata eh, wala akong kilalang Pandiwata na diyosa.",
+            "Hay nako! Hindi mo lang ako kilala dahil napakabata mo pa!",
+            "Nakakalimutan na ako ng mga tao, at dahil diyan, nawawala na ang aking mahika.",
+            "Totoo ba yung sinabi mong… makakapasa ako sa quiz dahil sa'yo?",
+            "Totoo nga! Kaso lang, napakahina na ng mahika ko at kailangan ko ng tulong.",
+            "Kung gusto mong matupad ang hiling mo, pahihiramin ko sa iyo ang aking mahika.",
+            "Gamitin mo ang mahikang ito para matulungan mo ako sa paghahanap ng mga tinatawag na \"Noble Deed\" na kinakailangan ko.",
+            "Noble Deed? Ano yun?",
+            "Malaking bagay ang isang Noble Deed. Ito ay isang gawaing nagbibigay ng malaking tulong para sa iyong kapwa tao.",
+            "Ipapaliwanag ko pa yan nang husto mamaya, pero ngayon, gusto mo ba akong tulungan?",
+            "Sige, tutulungan kita!",
+            "Galing! Tara na, tuturuan kitang gumamit ng mahika ko!"
+        };
+
+        // Start the opening sequence
+        StartOpeningSequence();
 
         // Initialize NPC dialogue sets
         npcDialogueSets = new List<NPCDialogueSet>
@@ -369,7 +421,7 @@ public class UIManager : MonoBehaviour
                 npcTag = "Aling Anne",
                 dialogues = new List<string>
                 {
-                    "Mamaya na lang tayo mag-usap, ‘nak. <b>Nilalaba</b> ko ngayon ang damit ni Elle.",
+                    "Mamaya na lang tayo mag-usap, 'nak. <b>Nilalaba</b> ko ngayon ang damit ni Elle.",
                 },
                 questions = new List<QuestionData>
                 {
@@ -397,7 +449,6 @@ public class UIManager : MonoBehaviour
         };
 
         UpdateDialogue();
-        interactiveBubble.SetActive(false);
         simpleBubble.SetActive(false);
         optionsPanel.SetActive(false);
         feedbackPanel.SetActive(false);
@@ -439,29 +490,182 @@ public class UIManager : MonoBehaviour
         {
             dialogueText.text = currentDialogues[currentIndex];
             ShowArrows(true);
+
+            // Check for specific dialogue to trigger camera pan
+            if (isOpeningSequence && currentIndex == 3 && currentDialogues[currentIndex] == "Huh? Teka lang…")
+            {
+                // Trigger camera pan to fountain
+                cameraFollow.StartPan(fountainTarget, 2f);
+                isWaitingForPan = true;
+                ShowArrows(false); // Hide arrows while panning
+            }
+            else if (isOpeningSequence && currentIndex == 4 && isWaitingForPan)
+            {
+                // Don't show the next dialogue until pan is complete
+                ShowArrows(false);
+                return;
+            }
+            else if (isOpeningSequence && currentIndex == 5 && currentDialogues[currentIndex] == "Nagbibiro lang ata sila eh, pero subukan ko na rin kaya…")
+            {
+                // Show the dialogue first
+                ShowArrows(false);
+                // Then wait for fountain interaction
+                isWaitingForFountain = true;
+                return;
+            }
+            else if (isOpeningSequence && currentIndex == 7 && currentDialogues[currentIndex] == "Makapasa ako sa quiz bukas!")
+            {
+                // Show the dialogue first
+                ShowArrows(false);
+                // Then show mysterious voice after a delay
+                Invoke(nameof(ShowFirstMysteriousVoice), 5f);
+                return;
+            }
+            else if (isOpeningSequence && currentIndex == 9 && currentDialogues[currentIndex] == "...Kaninong laruan 'to?")
+            {
+                // Show the dialogue first
+                ShowArrows(false);
+                // Then show mysterious voice after a delay
+                Invoke(nameof(ShowThirdMysteriousVoice), 5f);
+                return;
+            }
+            else if (isOpeningSequence && currentIndex == 10)
+            {
+                // Show Pandiwata's first dialogue and enable companion
+                ShowArrows(false);
+                interactiveBubble.SetActive(false);
+                simpleBubble.SetActive(true);
+                simpleBubbleText.text = "Pandiwata: \"" + currentDialogues[currentIndex] + "\"";
+                if (companion != null)
+                {
+                    companion.SetActive(true);
+                }
+                // Set up automatic progression after 5 seconds
+                Invoke(nameof(ShowNextDialogue), 5f);
+                return;
+            }
+            else if (isOpeningSequence && currentIndex >= 11 && currentIndex <= 22)
+            {
+                // Handle Pandiwata and player dialogue sequence
+                ShowArrows(true); // Show arrows to allow manual progression
+                if (currentIndex == 10 || currentIndex == 12 || currentIndex == 13 || currentIndex == 15 || currentIndex == 16 || currentIndex == 17 || currentIndex == 19 || currentIndex == 20 || currentIndex == 22) // Pandiwata's lines
+                {
+                    interactiveBubble.SetActive(false);
+                    simpleBubble.SetActive(true);
+                    simpleBubbleText.text = "Pandiwata: \"" + currentDialogues[currentIndex] + "\"";
+                    // Set up automatic progression after 5 seconds
+                    Invoke(nameof(ShowNextDialogue), 5f);
+                }
+                else // Player's lines
+                {
+                    interactiveBubble.SetActive(true);
+                    simpleBubble.SetActive(false);
+                    dialogueText.text = currentDialogues[currentIndex];
+                    // Set up automatic progression after 5 seconds
+                    Invoke(nameof(ShowNextDialogue), 5f);
+                }
+                return;
+            }
         }
         else
         {
+            if (isOpeningSequence)
+            {
+                // End opening sequence
+                isOpeningSequence = false;
+                interactiveBubble.SetActive(false);
+                simpleBubble.SetActive(false);
+                ShowArrows(false);
+                // Enable all NPCs after opening sequence
+                EnableAllNPCs();
+                return;
+            }
             dialogueText.text = "";
             ShowArrows(false);
             ShowQuiz();
         }
     }
 
-    public void PreviousDialogue()
+    private void ShowFirstMysteriousVoice()
     {
-        if (currentIndex > 0)
-        {
-            currentIndex--;
-            UpdateDialogue();
-        }
+        isShowingMysteriousVoice = true;
+        interactiveBubble.SetActive(false);
+        simpleBubble.SetActive(true);
+        simpleBubbleText.text = "???: \"Quiz? Anong quiz?\"";
+        Invoke(nameof(ShowSecondMysteriousVoice), 5f);
+    }
+
+    private void ShowSecondMysteriousVoice()
+    {
+        simpleBubbleText.text = "???: \"Ayan lang ba yung hiling mo? Makapasa sa isang quiz? Kayang-kaya ko yan ipatupad, ako na bahala sa'yo!\"";
+        Invoke(nameof(ShowPlayerSilence), 5f);
+    }
+
+    private void ShowPlayerSilence()
+    {
+        isShowingMysteriousVoice = false;
+        simpleBubble.SetActive(false);
+        interactiveBubble.SetActive(true);
+        ShowArrows(true);
+        currentIndex++;
+        UpdateDialogue();
+    }
+
+    private void ShowThirdMysteriousVoice()
+    {
+        isShowingMysteriousVoice = true;
+        interactiveBubble.SetActive(false);
+        simpleBubble.SetActive(true);
+        simpleBubbleText.text = "???: \"Hindi ako laruan!!\"";
+        Invoke(nameof(ShowFourthMysteriousVoice), 5f);
+    }
+
+    private void ShowFourthMysteriousVoice()
+    {
+        simpleBubbleText.text = "???: \"Hay.\"";
+        Invoke(nameof(ContinueAfterMysteriousVoice), 5f);
+    }
+
+    private void ContinueAfterMysteriousVoice()
+    {
+        isShowingMysteriousVoice = false;
+        simpleBubble.SetActive(false);
+        interactiveBubble.SetActive(true);
+        ShowArrows(true);
+        currentIndex++;
+        UpdateDialogue();
     }
 
     public void NextDialogue()
     {
-        if (currentIndex < currentDialogues.Count)
+        if (isWaitingForPan || isWaitingForFountain || isShowingMysteriousVoice)
         {
-            currentIndex++;
+            // Don't advance dialogue while waiting for pan, fountain interaction, or showing mysterious voice
+            return;
+        }
+
+        // Cancel any pending automatic progression
+        CancelInvoke(nameof(ShowNextDialogue));
+        
+        // Manually advance to next dialogue
+        currentIndex++;
+        UpdateDialogue();
+    }
+
+    public void PreviousDialogue()
+    {
+        if (isWaitingForPan || isWaitingForFountain || isShowingMysteriousVoice)
+        {
+            // Don't go back while waiting for pan, fountain interaction, or showing mysterious voice
+            return;
+        }
+
+        // Cancel any pending automatic progression
+        CancelInvoke(nameof(ShowNextDialogue));
+        
+        if (currentIndex > 0)
+        {
+            currentIndex--;
             UpdateDialogue();
         }
     }
@@ -749,5 +953,95 @@ public class UIManager : MonoBehaviour
     {
         feedbackPanel.SetActive(false);
         ShowQuiz();
+    }
+
+    private void StartOpeningSequence()
+    {
+        isOpeningSequence = true;
+        currentDialogues = new List<string>
+        {
+            "Hay… Pumunta ako rito sa hardin para magpaluwag pero…",
+            "…Nag-aalala pa rin ako sa quiz ko bukas na tungkol sa mga panlapi. Hirap na hirap talaga akong intindihin ang mga yun!",
+            "Paano na 'to? Huhu…",
+            "Huh? Teka lang…",
+            "Yan ba yung mahiwagang fountain na pinaguusapan ng mga kaklase ko? Ang fountain na nakatutupad ng mga hiling?",
+            "Nagbibiro lang ata sila eh, pero subukan ko na rin kaya…",
+            "Sana…",
+            "Makapasa ako sa quiz bukas!",
+            "...",
+            "...Kaninong laruan 'to?",
+            "Ako ay si Pandiwata! Isang diyosang nagbibigay ng swerte para sa kabutihan ng tao!",
+            "Nagsisinungaling ka ata eh, wala akong kilalang Pandiwata na diyosa.",
+            "Hay nako! Hindi mo lang ako kilala dahil napakabata mo pa!",
+            "Nakakalimutan na ako ng mga tao, at dahil diyan, nawawala na ang aking mahika.",
+            "Totoo ba yung sinabi mong… makakapasa ako sa quiz dahil sa'yo?",
+            "Totoo nga! Kaso lang, napakahina na ng mahika ko at kailangan ko ng tulong.",
+            "Kung gusto mong matupad ang hiling mo, pahihiramin ko sa iyo ang aking mahika.",
+            "Gamitin mo ang mahikang ito para matulungan mo ako sa paghahanap ng mga tinatawag na \"Noble Deed\" na kinakailangan ko.",
+            "Noble Deed? Ano yun?",
+            "Malaking bagay ang isang Noble Deed. Ito ay isang gawaing nagbibigay ng malaking tulong para sa iyong kapwa tao.",
+            "Ipapaliwanag ko pa yan nang husto mamaya, pero ngayon, gusto mo ba akong tulungan?",
+            "Sige, tutulungan kita!",
+            "Galing! Tara na, tuturuan kitang gumamit ng mahika ko!"
+        };
+        currentIndex = 0;
+        interactiveBubble.SetActive(true);
+        UpdateDialogue();
+    }
+
+    private void ShowNextDialogue()
+    {
+        currentIndex++;
+        UpdateDialogue();
+    }
+
+    // Call this method when the camera pan is complete
+    public void OnCameraPanComplete()
+    {
+        isWaitingForPan = false;
+        ShowArrows(true);
+        // Automatically advance to next dialogue
+        currentIndex++;
+        UpdateDialogue();
+    }
+
+    private void DisableAllNPCs()
+    {
+        if (npcs != null)
+        {
+            foreach (GameObject npc in npcs)
+            {
+                if (npc != null)
+                {
+                    npc.SetActive(false);
+                }
+            }
+        }
+    }
+
+    private void EnableAllNPCs()
+    {
+        if (npcs != null)
+        {
+            foreach (GameObject npc in npcs)
+            {
+                if (npc != null)
+                {
+                    npc.SetActive(true);
+                }
+            }
+        }
+    }
+
+    public void ContinueFountainDialogue()
+    {
+        if (isWaitingForFountain)
+        {
+            isWaitingForFountain = false;
+            interactiveBubble.SetActive(false); // Hide the dialogue bubble after fountain interaction
+            currentIndex++;
+            interactiveBubble.SetActive(true); // Show the dialogue bubble for the next dialogue
+            UpdateDialogue();
+        }
     }
 }
